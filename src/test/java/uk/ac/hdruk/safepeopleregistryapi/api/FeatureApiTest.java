@@ -14,9 +14,8 @@
 package uk.ac.hdruk.safepeopleregistryapi.api;
 
 import uk.ac.hdruk.safepeopleregistryapi.ApiException;
-import uk.ac.hdruk.safepeopleregistryapi.model.AccreditationIndexByRegistryId400Response;
-import uk.ac.hdruk.safepeopleregistryapi.model.AffiliationsIndexByRegistryId404Response;
 import uk.ac.hdruk.safepeopleregistryapi.model.FeatureIndex200Response;
+import uk.ac.hdruk.safepeopleregistryapi.model.FeatureIndex404Response;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -43,34 +42,6 @@ public class FeatureApiTest {
     @Test
     public void featureIndexTest() throws ApiException {
         FeatureIndex200Response response = api.featureIndex();
-        // TODO: test validations
-    }
-
-    /**
-     * Feature@show
-     *
-     * Return a Feature entry by its ID
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void featureShowTest() throws ApiException {
-        Integer featureId = null;
-        FeatureIndex200Response response = api.featureShow(featureId);
-        // TODO: test validations
-    }
-
-    /**
-     * Feature@show
-     *
-     * Toggle and return a Feature entry by its ID
-     *
-     * @throws ApiException if the Api call fails
-     */
-    @Test
-    public void featureToggleByFeatureIdTest() throws ApiException {
-        Integer featureId = null;
-        FeatureIndex200Response response = api.featureToggleByFeatureId(featureId);
         // TODO: test validations
     }
 

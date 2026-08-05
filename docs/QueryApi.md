@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 <a id="queryQuery"></a>
 # **queryQuery**
-> QueryQuery200Response queryQuery(xClientId, queryQueryRequest)
+> QueryQuery200Response queryQuery(xClientId, xSignature, queryQueryRequest)
 
 Query@query
 
-Query the registry by Digital Identifier
+Query the registry by Digital Identifier. Authenticated via x-client-id/x-signature headers (Custodian client credential + HMAC-signed payload), not a bearer token.
 
 ### Example
 ```java
@@ -31,9 +31,10 @@ public class Example {
 
     QueryApi apiInstance = new QueryApi(defaultClient);
     String xClientId = "8f14e45f-ceea-467e-adc1-0000example"; // String | Custodian client ID used to authenticate the requesting custodian
+    String xSignature = "xSignature_example"; // String | HMAC signature of the raw request body, signed with the custodian's unique identifier
     QueryQueryRequest queryQueryRequest = new QueryQueryRequest(); // QueryQueryRequest | Query definition
     try {
-      QueryQuery200Response result = apiInstance.queryQuery(xClientId, queryQueryRequest);
+      QueryQuery200Response result = apiInstance.queryQuery(xClientId, xSignature, queryQueryRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling QueryApi#queryQuery");
@@ -51,6 +52,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **xClientId** | **String**| Custodian client ID used to authenticate the requesting custodian | |
+| **xSignature** | **String**| HMAC signature of the raw request body, signed with the custodian&#39;s unique identifier | |
 | **queryQueryRequest** | [**QueryQueryRequest**](QueryQueryRequest.md)| Query definition | |
 
 ### Return type

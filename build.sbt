@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "uk.ac.hdruk.safepeopleregistryapi",
     name := "safepeopleregistry-api-sdk",
-    version := "0.0.0-test1",
+    version := "0.0.0-test2",
     scalaVersion := "2.11.12",
     scalacOptions ++= Seq("-feature"),
     compile / javacOptions ++= Seq("-Xlint:deprecation"),

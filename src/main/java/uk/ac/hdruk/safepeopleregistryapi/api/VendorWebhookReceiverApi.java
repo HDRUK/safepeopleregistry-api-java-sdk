@@ -27,9 +27,9 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import uk.ac.hdruk.safepeopleregistryapi.model.AccreditationIndexByRegistryId400Response;
-import uk.ac.hdruk.safepeopleregistryapi.model.ProjectHasOrganisationShow500Response;
 import uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive200Response;
+import uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive400Response;
+import uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive500Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -107,7 +107,7 @@ public class VendorWebhookReceiverApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/api/v1/vendor-webhooks/{provider}"
+        String localVarPath = "/api/v1/webhooks/{provider}"
             .replace("{" + "provider" + "}", localVarApiClient.escapeString(provider.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

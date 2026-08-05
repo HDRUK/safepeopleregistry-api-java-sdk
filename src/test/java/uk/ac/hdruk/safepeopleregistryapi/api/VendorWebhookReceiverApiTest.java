@@ -14,9 +14,9 @@
 package uk.ac.hdruk.safepeopleregistryapi.api;
 
 import uk.ac.hdruk.safepeopleregistryapi.ApiException;
-import uk.ac.hdruk.safepeopleregistryapi.model.AccreditationIndexByRegistryId400Response;
-import uk.ac.hdruk.safepeopleregistryapi.model.ProjectHasOrganisationShow500Response;
 import uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive200Response;
+import uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive400Response;
+import uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive500Response;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

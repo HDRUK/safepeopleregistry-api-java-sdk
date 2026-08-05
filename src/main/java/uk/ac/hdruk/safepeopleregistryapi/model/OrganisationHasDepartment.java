@@ -48,7 +48,7 @@ import uk.ac.hdruk.safepeopleregistryapi.JSON;
 /**
  * Pivot model representing the relationship between organisations and departments
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-03T14:11:11.944970577Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T05:12:22.471719795Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class OrganisationHasDepartment {
   public static final String SERIALIZED_NAME_ORGANISATION_ID = "organisation_id";
   @SerializedName(SERIALIZED_NAME_ORGANISATION_ID)

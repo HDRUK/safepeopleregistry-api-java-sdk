@@ -14,7 +14,7 @@
 package uk.ac.hdruk.safepeopleregistryapi.api;
 
 import uk.ac.hdruk.safepeopleregistryapi.ApiException;
-import uk.ac.hdruk.safepeopleregistryapi.model.AffiliationsIndexByRegistryId404Response;
+import uk.ac.hdruk.safepeopleregistryapi.model.FeatureIndex404Response;
 import uk.ac.hdruk.safepeopleregistryapi.model.QueryQuery200Response;
 import uk.ac.hdruk.safepeopleregistryapi.model.QueryQuery401Response;
 import uk.ac.hdruk.safepeopleregistryapi.model.QueryQueryRequest;
@@ -37,15 +37,16 @@ public class QueryApiTest {
     /**
      * Query@query
      *
-     * Query the registry by Digital Identifier
+     * Query the registry by Digital Identifier. Authenticated via x-client-id/x-signature headers (Custodian client credential + HMAC-signed payload), not a bearer token.
      *
      * @throws ApiException if the Api call fails
      */
     @Test
     public void queryQueryTest() throws ApiException {
         String xClientId = null;
+        String xSignature = null;
         QueryQueryRequest queryQueryRequest = null;
-        QueryQuery200Response response = api.queryQuery(xClientId, queryQueryRequest);
+        QueryQuery200Response response = api.queryQuery(xClientId, xSignature, queryQueryRequest);
         // TODO: test validations
     }
 

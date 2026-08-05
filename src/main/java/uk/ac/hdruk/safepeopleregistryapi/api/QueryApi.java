@@ -27,7 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import uk.ac.hdruk.safepeopleregistryapi.model.AffiliationsIndexByRegistryId404Response;
+import uk.ac.hdruk.safepeopleregistryapi.model.FeatureIndex404Response;
 import uk.ac.hdruk.safepeopleregistryapi.model.QueryQuery200Response;
 import uk.ac.hdruk.safepeopleregistryapi.model.QueryQuery401Response;
 import uk.ac.hdruk.safepeopleregistryapi.model.QueryQueryRequest;
@@ -78,6 +78,7 @@ public class QueryApi {
     /**
      * Build call for queryQuery
      * @param xClientId Custodian client ID used to authenticate the requesting custodian (required)
+     * @param xSignature HMAC signature of the raw request body, signed with the custodian&#39;s unique identifier (required)
      * @param queryQueryRequest Query definition (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -91,7 +92,7 @@ public class QueryApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call queryQueryCall(@javax.annotation.Nonnull String xClientId, @javax.annotation.Nonnull QueryQueryRequest queryQueryRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call queryQueryCall(@javax.annotation.Nonnull String xClientId, @javax.annotation.Nonnull String xSignature, @javax.annotation.Nonnull QueryQueryRequest queryQueryRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,15 +138,25 @@ public class QueryApi {
         }
 
 
+        if (xSignature != null) {
+            localVarHeaderParams.put("x-signature", localVarApiClient.parameterToString(xSignature));
+        }
+
+
         String[] localVarAuthNames = new String[] {  };
         return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call queryQueryValidateBeforeCall(@javax.annotation.Nonnull String xClientId, @javax.annotation.Nonnull QueryQueryRequest queryQueryRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call queryQueryValidateBeforeCall(@javax.annotation.Nonnull String xClientId, @javax.annotation.Nonnull String xSignature, @javax.annotation.Nonnull QueryQueryRequest queryQueryRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'xClientId' is set
         if (xClientId == null) {
             throw new ApiException("Missing the required parameter 'xClientId' when calling queryQuery(Async)");
+        }
+
+        // verify the required parameter 'xSignature' is set
+        if (xSignature == null) {
+            throw new ApiException("Missing the required parameter 'xSignature' when calling queryQuery(Async)");
         }
 
         // verify the required parameter 'queryQueryRequest' is set
@@ -153,14 +164,15 @@ public class QueryApi {
             throw new ApiException("Missing the required parameter 'queryQueryRequest' when calling queryQuery(Async)");
         }
 
-        return queryQueryCall(xClientId, queryQueryRequest, _callback);
+        return queryQueryCall(xClientId, xSignature, queryQueryRequest, _callback);
 
     }
 
     /**
      * Query@query
-     * Query the registry by Digital Identifier
+     * Query the registry by Digital Identifier. Authenticated via x-client-id/x-signature headers (Custodian client credential + HMAC-signed payload), not a bearer token.
      * @param xClientId Custodian client ID used to authenticate the requesting custodian (required)
+     * @param xSignature HMAC signature of the raw request body, signed with the custodian&#39;s unique identifier (required)
      * @param queryQueryRequest Query definition (required)
      * @return QueryQuery200Response
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -173,15 +185,16 @@ public class QueryApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public QueryQuery200Response queryQuery(@javax.annotation.Nonnull String xClientId, @javax.annotation.Nonnull QueryQueryRequest queryQueryRequest) throws ApiException {
-        ApiResponse<QueryQuery200Response> localVarResp = queryQueryWithHttpInfo(xClientId, queryQueryRequest);
+    public QueryQuery200Response queryQuery(@javax.annotation.Nonnull String xClientId, @javax.annotation.Nonnull String xSignature, @javax.annotation.Nonnull QueryQueryRequest queryQueryRequest) throws ApiException {
+        ApiResponse<QueryQuery200Response> localVarResp = queryQueryWithHttpInfo(xClientId, xSignature, queryQueryRequest);
         return localVarResp.getData();
     }
 
     /**
      * Query@query
-     * Query the registry by Digital Identifier
+     * Query the registry by Digital Identifier. Authenticated via x-client-id/x-signature headers (Custodian client credential + HMAC-signed payload), not a bearer token.
      * @param xClientId Custodian client ID used to authenticate the requesting custodian (required)
+     * @param xSignature HMAC signature of the raw request body, signed with the custodian&#39;s unique identifier (required)
      * @param queryQueryRequest Query definition (required)
      * @return ApiResponse&lt;QueryQuery200Response&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -194,16 +207,17 @@ public class QueryApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<QueryQuery200Response> queryQueryWithHttpInfo(@javax.annotation.Nonnull String xClientId, @javax.annotation.Nonnull QueryQueryRequest queryQueryRequest) throws ApiException {
-        okhttp3.Call localVarCall = queryQueryValidateBeforeCall(xClientId, queryQueryRequest, null);
+    public ApiResponse<QueryQuery200Response> queryQueryWithHttpInfo(@javax.annotation.Nonnull String xClientId, @javax.annotation.Nonnull String xSignature, @javax.annotation.Nonnull QueryQueryRequest queryQueryRequest) throws ApiException {
+        okhttp3.Call localVarCall = queryQueryValidateBeforeCall(xClientId, xSignature, queryQueryRequest, null);
         Type localVarReturnType = new TypeToken<QueryQuery200Response>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Query@query (asynchronously)
-     * Query the registry by Digital Identifier
+     * Query the registry by Digital Identifier. Authenticated via x-client-id/x-signature headers (Custodian client credential + HMAC-signed payload), not a bearer token.
      * @param xClientId Custodian client ID used to authenticate the requesting custodian (required)
+     * @param xSignature HMAC signature of the raw request body, signed with the custodian&#39;s unique identifier (required)
      * @param queryQueryRequest Query definition (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -217,9 +231,9 @@ public class QueryApi {
         <tr><td> 200 </td><td> Success </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call queryQueryAsync(@javax.annotation.Nonnull String xClientId, @javax.annotation.Nonnull QueryQueryRequest queryQueryRequest, final ApiCallback<QueryQuery200Response> _callback) throws ApiException {
+    public okhttp3.Call queryQueryAsync(@javax.annotation.Nonnull String xClientId, @javax.annotation.Nonnull String xSignature, @javax.annotation.Nonnull QueryQueryRequest queryQueryRequest, final ApiCallback<QueryQuery200Response> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = queryQueryValidateBeforeCall(xClientId, queryQueryRequest, _callback);
+        okhttp3.Call localVarCall = queryQueryValidateBeforeCall(xClientId, xSignature, queryQueryRequest, _callback);
         Type localVarReturnType = new TypeToken<QueryQuery200Response>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
