@@ -17,7 +17,6 @@ User model
 |**emailVerifiedAt** | **String** |  |  [optional] |
 |**consentScrape** | **Boolean** |  |  [optional] |
 |**publicOptIn** | **Boolean** |  |  [optional] |
-|**declarationSigned** | **Boolean** |  |  [optional] |
 |**organisationId** | **Integer** |  |  [optional] |
 |**orcidScanning** | **Integer** |  |  [optional] |
 |**orcidScanningCompletedAt** | **String** |  |  [optional] |

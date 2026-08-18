@@ -48,7 +48,7 @@ import uk.ac.hdruk.safepeopleregistryapi.JSON;
 /**
  * User model
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T05:12:22.471719795Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-18T08:34:20.150560795Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class User {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -94,11 +94,6 @@ public class User {
   @SerializedName(SERIALIZED_NAME_PUBLIC_OPT_IN)
   @javax.annotation.Nullable
   private Boolean publicOptIn;
-
-  public static final String SERIALIZED_NAME_DECLARATION_SIGNED = "declaration_signed";
-  @SerializedName(SERIALIZED_NAME_DECLARATION_SIGNED)
-  @javax.annotation.Nullable
-  private Boolean declarationSigned;
 
   public static final String SERIALIZED_NAME_ORGANISATION_ID = "organisation_id";
   @SerializedName(SERIALIZED_NAME_ORGANISATION_ID)
@@ -304,25 +299,6 @@ public class User {
   }
 
 
-  public User declarationSigned(@javax.annotation.Nullable Boolean declarationSigned) {
-    this.declarationSigned = declarationSigned;
-    return this;
-  }
-
-  /**
-   * Get declarationSigned
-   * @return declarationSigned
-   */
-  @javax.annotation.Nullable
-  public Boolean getDeclarationSigned() {
-    return declarationSigned;
-  }
-
-  public void setDeclarationSigned(@javax.annotation.Nullable Boolean declarationSigned) {
-    this.declarationSigned = declarationSigned;
-  }
-
-
   public User organisationId(@javax.annotation.Nullable Integer organisationId) {
     this.organisationId = organisationId;
     return this;
@@ -456,7 +432,6 @@ public class User {
         Objects.equals(this.emailVerifiedAt, user.emailVerifiedAt) &&
         Objects.equals(this.consentScrape, user.consentScrape) &&
         Objects.equals(this.publicOptIn, user.publicOptIn) &&
-        Objects.equals(this.declarationSigned, user.declarationSigned) &&
         Objects.equals(this.organisationId, user.organisationId) &&
         Objects.equals(this.orcidScanning, user.orcidScanning) &&
         Objects.equals(this.orcidScanningCompletedAt, user.orcidScanningCompletedAt) &&
@@ -467,7 +442,7 @@ public class User {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, updatedAt, firstName, lastName, email, emailVerifiedAt, consentScrape, publicOptIn, declarationSigned, organisationId, orcidScanning, orcidScanningCompletedAt, location, tAndCAgreed, tAndCAgreementDate);
+    return Objects.hash(id, createdAt, updatedAt, firstName, lastName, email, emailVerifiedAt, consentScrape, publicOptIn, organisationId, orcidScanning, orcidScanningCompletedAt, location, tAndCAgreed, tAndCAgreementDate);
   }
 
   @Override
@@ -483,7 +458,6 @@ public class User {
     sb.append("    emailVerifiedAt: ").append(toIndentedString(emailVerifiedAt)).append("\n");
     sb.append("    consentScrape: ").append(toIndentedString(consentScrape)).append("\n");
     sb.append("    publicOptIn: ").append(toIndentedString(publicOptIn)).append("\n");
-    sb.append("    declarationSigned: ").append(toIndentedString(declarationSigned)).append("\n");
     sb.append("    organisationId: ").append(toIndentedString(organisationId)).append("\n");
     sb.append("    orcidScanning: ").append(toIndentedString(orcidScanning)).append("\n");
     sb.append("    orcidScanningCompletedAt: ").append(toIndentedString(orcidScanningCompletedAt)).append("\n");
@@ -508,7 +482,7 @@ public class User {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "created_at", "updated_at", "first_name", "last_name", "email", "email_verified_at", "consent_scrape", "public_opt_in", "declaration_signed", "organisation_id", "orcid_scanning", "orcid_scanning_completed_at", "location", "t_and_c_agreed", "t_and_c_agreement_date"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created_at", "updated_at", "first_name", "last_name", "email", "email_verified_at", "consent_scrape", "public_opt_in", "organisation_id", "orcid_scanning", "orcid_scanning_completed_at", "location", "t_and_c_agreed", "t_and_c_agreement_date"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

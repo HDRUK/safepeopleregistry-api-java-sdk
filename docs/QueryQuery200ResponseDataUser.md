@@ -12,7 +12,6 @@ The User record linked to the matched Registry
 |**firstName** | **String** |  |  [optional] |
 |**lastName** | **String** |  |  [optional] |
 |**name** | **String** |  |  [optional] |
-|**email** | **String** |  |  [optional] |
 |**registryId** | **Integer** |  |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
@@ -22,7 +21,6 @@ The User record linked to the matched Registry
 |**unclaimed** | **Integer** |  |  [optional] |
 |**feedSource** | **String** |  |  [optional] |
 |**publicOptIn** | **Integer** |  |  [optional] |
-|**declarationSigned** | **Boolean** |  |  [optional] |
 |**organisationId** | **Integer** |  |  [optional] |
 |**orcidScanning** | **Boolean** |  |  [optional] |
 |**orcidScanningCompletedAt** | **String** |  |  [optional] |
@@ -34,7 +32,6 @@ The User record linked to the matched Registry
 |**location** | **String** |  |  [optional] |
 |**tAndCAgreed** | **Boolean** |  |  [optional] |
 |**tAndCAgreementDate** | **String** |  |  [optional] |
-|**uksaRegistered** | **Boolean** |  |  [optional] |
 |**isSro** | **Boolean** |  |  [optional] |
 |**invitedBy** | **Integer** |  |  [optional] |
 |**status** | **String** |  |  [optional] |

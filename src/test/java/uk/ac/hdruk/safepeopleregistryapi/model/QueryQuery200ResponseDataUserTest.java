@@ -72,14 +72,6 @@ public class QueryQuery200ResponseDataUserTest {
     }
 
     /**
-     * Test the property 'email'
-     */
-    @Test
-    public void emailTest() {
-        // TODO: test email
-    }
-
-    /**
      * Test the property 'registryId'
      */
     @Test
@@ -149,14 +141,6 @@ public class QueryQuery200ResponseDataUserTest {
     @Test
     public void publicOptInTest() {
         // TODO: test publicOptIn
-    }
-
-    /**
-     * Test the property 'declarationSigned'
-     */
-    @Test
-    public void declarationSignedTest() {
-        // TODO: test declarationSigned
     }
 
     /**
@@ -245,14 +229,6 @@ public class QueryQuery200ResponseDataUserTest {
     @Test
     public void tAndCAgreementDateTest() {
         // TODO: test tAndCAgreementDate
-    }
-
-    /**
-     * Test the property 'uksaRegistered'
-     */
-    @Test
-    public void uksaRegisteredTest() {
-        // TODO: test uksaRegistered
     }
 
     /**

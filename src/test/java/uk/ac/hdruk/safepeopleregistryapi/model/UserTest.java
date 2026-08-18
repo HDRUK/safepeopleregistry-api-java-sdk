@@ -110,14 +110,6 @@ public class UserTest {
     }
 
     /**
-     * Test the property 'declarationSigned'
-     */
-    @Test
-    public void declarationSignedTest() {
-        // TODO: test declarationSigned
-    }
-
-    /**
      * Test the property 'organisationId'
      */
     @Test

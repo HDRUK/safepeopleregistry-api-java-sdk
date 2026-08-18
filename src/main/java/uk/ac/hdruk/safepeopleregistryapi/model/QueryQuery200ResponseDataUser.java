@@ -50,7 +50,7 @@ import uk.ac.hdruk.safepeopleregistryapi.JSON;
 /**
  * The User record linked to the matched Registry
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-05T05:12:22.471719795Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-18T08:34:20.150560795Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class QueryQuery200ResponseDataUser {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -71,11 +71,6 @@ public class QueryQuery200ResponseDataUser {
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nullable
   private String name;
-
-  public static final String SERIALIZED_NAME_EMAIL = "email";
-  @SerializedName(SERIALIZED_NAME_EMAIL)
-  @javax.annotation.Nullable
-  private String email;
 
   public static final String SERIALIZED_NAME_REGISTRY_ID = "registry_id";
   @SerializedName(SERIALIZED_NAME_REGISTRY_ID)
@@ -121,11 +116,6 @@ public class QueryQuery200ResponseDataUser {
   @SerializedName(SERIALIZED_NAME_PUBLIC_OPT_IN)
   @javax.annotation.Nullable
   private Integer publicOptIn;
-
-  public static final String SERIALIZED_NAME_DECLARATION_SIGNED = "declaration_signed";
-  @SerializedName(SERIALIZED_NAME_DECLARATION_SIGNED)
-  @javax.annotation.Nullable
-  private Boolean declarationSigned;
 
   public static final String SERIALIZED_NAME_ORGANISATION_ID = "organisation_id";
   @SerializedName(SERIALIZED_NAME_ORGANISATION_ID)
@@ -181,11 +171,6 @@ public class QueryQuery200ResponseDataUser {
   @SerializedName(SERIALIZED_NAME_T_AND_C_AGREEMENT_DATE)
   @javax.annotation.Nullable
   private String tAndCAgreementDate;
-
-  public static final String SERIALIZED_NAME_UKSA_REGISTERED = "uksa_registered";
-  @SerializedName(SERIALIZED_NAME_UKSA_REGISTERED)
-  @javax.annotation.Nullable
-  private Boolean uksaRegistered;
 
   public static final String SERIALIZED_NAME_IS_SRO = "is_sro";
   @SerializedName(SERIALIZED_NAME_IS_SRO)
@@ -288,25 +273,6 @@ public class QueryQuery200ResponseDataUser {
 
   public void setName(@javax.annotation.Nullable String name) {
     this.name = name;
-  }
-
-
-  public QueryQuery200ResponseDataUser email(@javax.annotation.Nullable String email) {
-    this.email = email;
-    return this;
-  }
-
-  /**
-   * Get email
-   * @return email
-   */
-  @javax.annotation.Nullable
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(@javax.annotation.Nullable String email) {
-    this.email = email;
   }
 
 
@@ -478,25 +444,6 @@ public class QueryQuery200ResponseDataUser {
 
   public void setPublicOptIn(@javax.annotation.Nullable Integer publicOptIn) {
     this.publicOptIn = publicOptIn;
-  }
-
-
-  public QueryQuery200ResponseDataUser declarationSigned(@javax.annotation.Nullable Boolean declarationSigned) {
-    this.declarationSigned = declarationSigned;
-    return this;
-  }
-
-  /**
-   * Get declarationSigned
-   * @return declarationSigned
-   */
-  @javax.annotation.Nullable
-  public Boolean getDeclarationSigned() {
-    return declarationSigned;
-  }
-
-  public void setDeclarationSigned(@javax.annotation.Nullable Boolean declarationSigned) {
-    this.declarationSigned = declarationSigned;
   }
 
 
@@ -709,25 +656,6 @@ public class QueryQuery200ResponseDataUser {
   }
 
 
-  public QueryQuery200ResponseDataUser uksaRegistered(@javax.annotation.Nullable Boolean uksaRegistered) {
-    this.uksaRegistered = uksaRegistered;
-    return this;
-  }
-
-  /**
-   * Get uksaRegistered
-   * @return uksaRegistered
-   */
-  @javax.annotation.Nullable
-  public Boolean getUksaRegistered() {
-    return uksaRegistered;
-  }
-
-  public void setUksaRegistered(@javax.annotation.Nullable Boolean uksaRegistered) {
-    this.uksaRegistered = uksaRegistered;
-  }
-
-
   public QueryQuery200ResponseDataUser isSro(@javax.annotation.Nullable Boolean isSro) {
     this.isSro = isSro;
     return this;
@@ -837,7 +765,6 @@ public class QueryQuery200ResponseDataUser {
         Objects.equals(this.firstName, queryQuery200ResponseDataUser.firstName) &&
         Objects.equals(this.lastName, queryQuery200ResponseDataUser.lastName) &&
         Objects.equals(this.name, queryQuery200ResponseDataUser.name) &&
-        Objects.equals(this.email, queryQuery200ResponseDataUser.email) &&
         Objects.equals(this.registryId, queryQuery200ResponseDataUser.registryId) &&
         Objects.equals(this.createdAt, queryQuery200ResponseDataUser.createdAt) &&
         Objects.equals(this.updatedAt, queryQuery200ResponseDataUser.updatedAt) &&
@@ -847,7 +774,6 @@ public class QueryQuery200ResponseDataUser {
         Objects.equals(this.unclaimed, queryQuery200ResponseDataUser.unclaimed) &&
         Objects.equals(this.feedSource, queryQuery200ResponseDataUser.feedSource) &&
         Objects.equals(this.publicOptIn, queryQuery200ResponseDataUser.publicOptIn) &&
-        Objects.equals(this.declarationSigned, queryQuery200ResponseDataUser.declarationSigned) &&
         Objects.equals(this.organisationId, queryQuery200ResponseDataUser.organisationId) &&
         Objects.equals(this.orcidScanning, queryQuery200ResponseDataUser.orcidScanning) &&
         Objects.equals(this.orcidScanningCompletedAt, queryQuery200ResponseDataUser.orcidScanningCompletedAt) &&
@@ -859,7 +785,6 @@ public class QueryQuery200ResponseDataUser {
         Objects.equals(this.location, queryQuery200ResponseDataUser.location) &&
         Objects.equals(this.tAndCAgreed, queryQuery200ResponseDataUser.tAndCAgreed) &&
         Objects.equals(this.tAndCAgreementDate, queryQuery200ResponseDataUser.tAndCAgreementDate) &&
-        Objects.equals(this.uksaRegistered, queryQuery200ResponseDataUser.uksaRegistered) &&
         Objects.equals(this.isSro, queryQuery200ResponseDataUser.isSro) &&
         Objects.equals(this.invitedBy, queryQuery200ResponseDataUser.invitedBy) &&
         Objects.equals(this.status, queryQuery200ResponseDataUser.status) &&
@@ -873,7 +798,7 @@ public class QueryQuery200ResponseDataUser {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, lastName, name, email, registryId, createdAt, updatedAt, userGroup, consentScrape, orcId, unclaimed, feedSource, publicOptIn, declarationSigned, organisationId, orcidScanning, orcidScanningCompletedAt, isDelegate, isOrgAdmin, custodianId, custodianUserId, role, location, tAndCAgreed, tAndCAgreementDate, uksaRegistered, isSro, invitedBy, status, evaluation, identity);
+    return Objects.hash(id, firstName, lastName, name, registryId, createdAt, updatedAt, userGroup, consentScrape, orcId, unclaimed, feedSource, publicOptIn, organisationId, orcidScanning, orcidScanningCompletedAt, isDelegate, isOrgAdmin, custodianId, custodianUserId, role, location, tAndCAgreed, tAndCAgreementDate, isSro, invitedBy, status, evaluation, identity);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -891,7 +816,6 @@ public class QueryQuery200ResponseDataUser {
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    registryId: ").append(toIndentedString(registryId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
@@ -901,7 +825,6 @@ public class QueryQuery200ResponseDataUser {
     sb.append("    unclaimed: ").append(toIndentedString(unclaimed)).append("\n");
     sb.append("    feedSource: ").append(toIndentedString(feedSource)).append("\n");
     sb.append("    publicOptIn: ").append(toIndentedString(publicOptIn)).append("\n");
-    sb.append("    declarationSigned: ").append(toIndentedString(declarationSigned)).append("\n");
     sb.append("    organisationId: ").append(toIndentedString(organisationId)).append("\n");
     sb.append("    orcidScanning: ").append(toIndentedString(orcidScanning)).append("\n");
     sb.append("    orcidScanningCompletedAt: ").append(toIndentedString(orcidScanningCompletedAt)).append("\n");
@@ -913,7 +836,6 @@ public class QueryQuery200ResponseDataUser {
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    tAndCAgreed: ").append(toIndentedString(tAndCAgreed)).append("\n");
     sb.append("    tAndCAgreementDate: ").append(toIndentedString(tAndCAgreementDate)).append("\n");
-    sb.append("    uksaRegistered: ").append(toIndentedString(uksaRegistered)).append("\n");
     sb.append("    isSro: ").append(toIndentedString(isSro)).append("\n");
     sb.append("    invitedBy: ").append(toIndentedString(invitedBy)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
@@ -937,7 +859,7 @@ public class QueryQuery200ResponseDataUser {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "first_name", "last_name", "name", "email", "registry_id", "created_at", "updated_at", "user_group", "consent_scrape", "orc_id", "unclaimed", "feed_source", "public_opt_in", "declaration_signed", "organisation_id", "orcid_scanning", "orcid_scanning_completed_at", "is_delegate", "is_org_admin", "custodian_id", "custodian_user_id", "role", "location", "t_and_c_agreed", "t_and_c_agreement_date", "uksa_registered", "is_sro", "invited_by", "status", "evaluation", "identity"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "first_name", "last_name", "name", "registry_id", "created_at", "updated_at", "user_group", "consent_scrape", "orc_id", "unclaimed", "feed_source", "public_opt_in", "organisation_id", "orcid_scanning", "orcid_scanning_completed_at", "is_delegate", "is_org_admin", "custodian_id", "custodian_user_id", "role", "location", "t_and_c_agreed", "t_and_c_agreement_date", "is_sro", "invited_by", "status", "evaluation", "identity"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -972,9 +894,6 @@ public class QueryQuery200ResponseDataUser {
       }
       if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
-      }
-      if ((jsonObj.get("email") != null && !jsonObj.get("email").isJsonNull()) && !jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
       }
       if ((jsonObj.get("created_at") != null && !jsonObj.get("created_at").isJsonNull()) && !jsonObj.get("created_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `created_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("created_at").toString()));
