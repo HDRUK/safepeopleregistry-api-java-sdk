@@ -23,6 +23,8 @@ Model representing identity records
 |**idvtDocumentNumber** | **String** | Document number used for IDVT |  [optional] |
 |**idvtDocumentCountry** | **String** | Country of the document used for IDVT |  [optional] |
 |**idvtDocumentValidUntil** | **LocalDate** | Validity date of the document used for IDVT |  [optional] |
+|**idvtDocumentFirstName** | **String** | First name on the document used for IDVT |  [optional] |
+|**idvtDocumentValidLastName** | **String** | Last name on the document used for IDVT |  [optional] |
 |**idvtAttemptId** | **String** | ID of the IDVT attempt |  [optional] |
 |**idvtContextId** | **String** | Context ID for IDVT |  [optional] |
 |**idvtDocumentDob** | **LocalDate** | Date of birth on the document used for IDVT |  [optional] |

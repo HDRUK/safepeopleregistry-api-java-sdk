@@ -25,17 +25,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for EntityModel
+ * Model tests for DecisionModelType
  */
-public class EntityModelTest {
-    private final EntityModel model = new EntityModel();
+public class DecisionModelTypeTest {
+    private final DecisionModelType model = new DecisionModelType();
 
     /**
-     * Model tests for EntityModel
+     * Model tests for DecisionModelType
      */
     @Test
-    public void testEntityModel() {
-        // TODO: test EntityModel
+    public void testDecisionModelType() {
+        // TODO: test DecisionModelType
     }
 
     /**
@@ -52,62 +52,6 @@ public class EntityModelTest {
     @Test
     public void nameTest() {
         // TODO: test name
-    }
-
-    /**
-     * Test the property 'description'
-     */
-    @Test
-    public void descriptionTest() {
-        // TODO: test description
-    }
-
-    /**
-     * Test the property 'entityModelTypeId'
-     */
-    @Test
-    public void entityModelTypeIdTest() {
-        // TODO: test entityModelTypeId
-    }
-
-    /**
-     * Test the property 'callsFile'
-     */
-    @Test
-    public void callsFileTest() {
-        // TODO: test callsFile
-    }
-
-    /**
-     * Test the property 'filePath'
-     */
-    @Test
-    public void filePathTest() {
-        // TODO: test filePath
-    }
-
-    /**
-     * Test the property 'callsOperation'
-     */
-    @Test
-    public void callsOperationTest() {
-        // TODO: test callsOperation
-    }
-
-    /**
-     * Test the property 'operation'
-     */
-    @Test
-    public void operationTest() {
-        // TODO: test operation
-    }
-
-    /**
-     * Test the property 'active'
-     */
-    @Test
-    public void activeTest() {
-        // TODO: test active
     }
 
     /**

@@ -46,35 +46,35 @@ import java.util.Set;
 import uk.ac.hdruk.safepeopleregistryapi.JSON;
 
 /**
- * Pivot model representing the relationship between organisations and charities
+ * An email domain routed to a Registry SSO tenant&#39;s Identity Provider
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T15:06:32.818197734Z[Etc/UTC]", comments = "Generator version: 7.24.0")
-public class OrganisationHasCharity {
+public class SsoTenantDomain {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
   private Integer id;
 
-  public static final String SERIALIZED_NAME_ORGANISATION_ID = "organisation_id";
-  @SerializedName(SERIALIZED_NAME_ORGANISATION_ID)
+  public static final String SERIALIZED_NAME_SSO_TENANT_ID = "sso_tenant_id";
+  @SerializedName(SERIALIZED_NAME_SSO_TENANT_ID)
   @javax.annotation.Nullable
-  private Integer organisationId;
+  private Integer ssoTenantId;
 
-  public static final String SERIALIZED_NAME_CHARITY_ID = "charity_id";
-  @SerializedName(SERIALIZED_NAME_CHARITY_ID)
+  public static final String SERIALIZED_NAME_DOMAIN = "domain";
+  @SerializedName(SERIALIZED_NAME_DOMAIN)
   @javax.annotation.Nullable
-  private Integer charityId;
+  private String domain;
 
-  public OrganisationHasCharity() {
+  public SsoTenantDomain() {
   }
 
-  public OrganisationHasCharity id(@javax.annotation.Nullable Integer id) {
+  public SsoTenantDomain id(@javax.annotation.Nullable Integer id) {
     this.id = id;
     return this;
   }
 
   /**
-   * Unique identifier for the organisation-charity relationship
+   * Model primary key
    * @return id
    */
   @javax.annotation.Nullable
@@ -87,41 +87,41 @@ public class OrganisationHasCharity {
   }
 
 
-  public OrganisationHasCharity organisationId(@javax.annotation.Nullable Integer organisationId) {
-    this.organisationId = organisationId;
+  public SsoTenantDomain ssoTenantId(@javax.annotation.Nullable Integer ssoTenantId) {
+    this.ssoTenantId = ssoTenantId;
     return this;
   }
 
   /**
-   * ID of the organisation
-   * @return organisationId
+   * Get ssoTenantId
+   * @return ssoTenantId
    */
   @javax.annotation.Nullable
-  public Integer getOrganisationId() {
-    return organisationId;
+  public Integer getSsoTenantId() {
+    return ssoTenantId;
   }
 
-  public void setOrganisationId(@javax.annotation.Nullable Integer organisationId) {
-    this.organisationId = organisationId;
+  public void setSsoTenantId(@javax.annotation.Nullable Integer ssoTenantId) {
+    this.ssoTenantId = ssoTenantId;
   }
 
 
-  public OrganisationHasCharity charityId(@javax.annotation.Nullable Integer charityId) {
-    this.charityId = charityId;
+  public SsoTenantDomain domain(@javax.annotation.Nullable String domain) {
+    this.domain = domain;
     return this;
   }
 
   /**
-   * ID of the charity
-   * @return charityId
+   * Get domain
+   * @return domain
    */
   @javax.annotation.Nullable
-  public Integer getCharityId() {
-    return charityId;
+  public String getDomain() {
+    return domain;
   }
 
-  public void setCharityId(@javax.annotation.Nullable Integer charityId) {
-    this.charityId = charityId;
+  public void setDomain(@javax.annotation.Nullable String domain) {
+    this.domain = domain;
   }
 
 
@@ -134,24 +134,24 @@ public class OrganisationHasCharity {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrganisationHasCharity organisationHasCharity = (OrganisationHasCharity) o;
-    return Objects.equals(this.id, organisationHasCharity.id) &&
-        Objects.equals(this.organisationId, organisationHasCharity.organisationId) &&
-        Objects.equals(this.charityId, organisationHasCharity.charityId);
+    SsoTenantDomain ssoTenantDomain = (SsoTenantDomain) o;
+    return Objects.equals(this.id, ssoTenantDomain.id) &&
+        Objects.equals(this.ssoTenantId, ssoTenantDomain.ssoTenantId) &&
+        Objects.equals(this.domain, ssoTenantDomain.domain);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, organisationId, charityId);
+    return Objects.hash(id, ssoTenantId, domain);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrganisationHasCharity {\n");
+    sb.append("class SsoTenantDomain {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    organisationId: ").append(toIndentedString(organisationId)).append("\n");
-    sb.append("    charityId: ").append(toIndentedString(charityId)).append("\n");
+    sb.append("    ssoTenantId: ").append(toIndentedString(ssoTenantId)).append("\n");
+    sb.append("    domain: ").append(toIndentedString(domain)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -170,7 +170,7 @@ public class OrganisationHasCharity {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "organisation_id", "charity_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "sso_tenant_id", "domain"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -180,45 +180,48 @@ public class OrganisationHasCharity {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to OrganisationHasCharity
+   * @throws IOException if the JSON Element is invalid with respect to SsoTenantDomain
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!OrganisationHasCharity.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in OrganisationHasCharity is not found in the empty JSON string", OrganisationHasCharity.openapiRequiredFields.toString()));
+        if (!SsoTenantDomain.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in SsoTenantDomain is not found in the empty JSON string", SsoTenantDomain.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!OrganisationHasCharity.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `OrganisationHasCharity` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!SsoTenantDomain.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `SsoTenantDomain` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if ((jsonObj.get("domain") != null && !jsonObj.get("domain").isJsonNull()) && !jsonObj.get("domain").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `domain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("domain").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!OrganisationHasCharity.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'OrganisationHasCharity' and its subtypes
+       if (!SsoTenantDomain.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SsoTenantDomain' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<OrganisationHasCharity> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(OrganisationHasCharity.class));
+       final TypeAdapter<SsoTenantDomain> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SsoTenantDomain.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<OrganisationHasCharity>() {
+       return (TypeAdapter<T>) new TypeAdapter<SsoTenantDomain>() {
            @Override
-           public void write(JsonWriter out, OrganisationHasCharity value) throws IOException {
+           public void write(JsonWriter out, SsoTenantDomain value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public OrganisationHasCharity read(JsonReader in) throws IOException {
+           public SsoTenantDomain read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -229,18 +232,18 @@ public class OrganisationHasCharity {
   }
 
   /**
-   * Create an instance of OrganisationHasCharity given an JSON string
+   * Create an instance of SsoTenantDomain given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of OrganisationHasCharity
-   * @throws IOException if the JSON string is invalid with respect to OrganisationHasCharity
+   * @return An instance of SsoTenantDomain
+   * @throws IOException if the JSON string is invalid with respect to SsoTenantDomain
    */
-  public static OrganisationHasCharity fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, OrganisationHasCharity.class);
+  public static SsoTenantDomain fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SsoTenantDomain.class);
   }
 
   /**
-   * Convert an instance of OrganisationHasCharity to an JSON string
+   * Convert an instance of SsoTenantDomain to an JSON string
    *
    * @return JSON string
    */

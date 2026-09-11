@@ -79,11 +79,11 @@ public class DecisionModelTest {
     }
 
     /**
-     * Test the property 'entityModelTypeId'
+     * Test the property 'decisionModelTypeId'
      */
     @Test
-    public void entityModelTypeIdTest() {
-        // TODO: test entityModelTypeId
+    public void decisionModelTypeIdTest() {
+        // TODO: test decisionModelTypeId
     }
 
     /**

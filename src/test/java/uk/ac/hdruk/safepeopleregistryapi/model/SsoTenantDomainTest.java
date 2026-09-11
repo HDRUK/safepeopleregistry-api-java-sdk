@@ -19,23 +19,22 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.OffsetDateTime;
 import java.util.Arrays;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for EntityModelType
+ * Model tests for SsoTenantDomain
  */
-public class EntityModelTypeTest {
-    private final EntityModelType model = new EntityModelType();
+public class SsoTenantDomainTest {
+    private final SsoTenantDomain model = new SsoTenantDomain();
 
     /**
-     * Model tests for EntityModelType
+     * Model tests for SsoTenantDomain
      */
     @Test
-    public void testEntityModelType() {
-        // TODO: test EntityModelType
+    public void testSsoTenantDomain() {
+        // TODO: test SsoTenantDomain
     }
 
     /**
@@ -47,27 +46,19 @@ public class EntityModelTypeTest {
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'ssoTenantId'
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
+    public void ssoTenantIdTest() {
+        // TODO: test ssoTenantId
     }
 
     /**
-     * Test the property 'createdAt'
+     * Test the property 'domain'
      */
     @Test
-    public void createdAtTest() {
-        // TODO: test createdAt
-    }
-
-    /**
-     * Test the property 'updatedAt'
-     */
-    @Test
-    public void updatedAtTest() {
-        // TODO: test updatedAt
+    public void domainTest() {
+        // TODO: test domain
     }
 
 }

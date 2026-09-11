@@ -11,7 +11,7 @@ CustodianModelConfig model
 |**id** | **Integer** | Model primary key |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
-|**entityModelId** | **Integer** |  |  [optional] |
+|**decisionModelId** | **Integer** |  |  [optional] |
 |**active** | **Boolean** |  |  [optional] |
 |**custodianId** | **Integer** |  |  [optional] |
 

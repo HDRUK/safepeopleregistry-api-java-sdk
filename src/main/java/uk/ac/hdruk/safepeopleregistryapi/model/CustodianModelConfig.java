@@ -48,7 +48,7 @@ import uk.ac.hdruk.safepeopleregistryapi.JSON;
 /**
  * CustodianModelConfig model
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-18T08:34:20.150560795Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T15:06:32.818197734Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class CustodianModelConfig {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -65,10 +65,10 @@ public class CustodianModelConfig {
   @javax.annotation.Nullable
   private String updatedAt;
 
-  public static final String SERIALIZED_NAME_ENTITY_MODEL_ID = "entity_model_id";
-  @SerializedName(SERIALIZED_NAME_ENTITY_MODEL_ID)
+  public static final String SERIALIZED_NAME_DECISION_MODEL_ID = "decision_model_id";
+  @SerializedName(SERIALIZED_NAME_DECISION_MODEL_ID)
   @javax.annotation.Nullable
-  private Integer entityModelId;
+  private Integer decisionModelId;
 
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
@@ -140,22 +140,22 @@ public class CustodianModelConfig {
   }
 
 
-  public CustodianModelConfig entityModelId(@javax.annotation.Nullable Integer entityModelId) {
-    this.entityModelId = entityModelId;
+  public CustodianModelConfig decisionModelId(@javax.annotation.Nullable Integer decisionModelId) {
+    this.decisionModelId = decisionModelId;
     return this;
   }
 
   /**
-   * Get entityModelId
-   * @return entityModelId
+   * Get decisionModelId
+   * @return decisionModelId
    */
   @javax.annotation.Nullable
-  public Integer getEntityModelId() {
-    return entityModelId;
+  public Integer getDecisionModelId() {
+    return decisionModelId;
   }
 
-  public void setEntityModelId(@javax.annotation.Nullable Integer entityModelId) {
-    this.entityModelId = entityModelId;
+  public void setDecisionModelId(@javax.annotation.Nullable Integer decisionModelId) {
+    this.decisionModelId = decisionModelId;
   }
 
 
@@ -210,14 +210,14 @@ public class CustodianModelConfig {
     return Objects.equals(this.id, custodianModelConfig.id) &&
         Objects.equals(this.createdAt, custodianModelConfig.createdAt) &&
         Objects.equals(this.updatedAt, custodianModelConfig.updatedAt) &&
-        Objects.equals(this.entityModelId, custodianModelConfig.entityModelId) &&
+        Objects.equals(this.decisionModelId, custodianModelConfig.decisionModelId) &&
         Objects.equals(this.active, custodianModelConfig.active) &&
         Objects.equals(this.custodianId, custodianModelConfig.custodianId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, updatedAt, entityModelId, active, custodianId);
+    return Objects.hash(id, createdAt, updatedAt, decisionModelId, active, custodianId);
   }
 
   @Override
@@ -227,7 +227,7 @@ public class CustodianModelConfig {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    entityModelId: ").append(toIndentedString(entityModelId)).append("\n");
+    sb.append("    decisionModelId: ").append(toIndentedString(decisionModelId)).append("\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    custodianId: ").append(toIndentedString(custodianId)).append("\n");
     sb.append("}");
@@ -248,7 +248,7 @@ public class CustodianModelConfig {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "created_at", "updated_at", "entity_model_id", "active", "custodian_id"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created_at", "updated_at", "decision_model_id", "active", "custodian_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);

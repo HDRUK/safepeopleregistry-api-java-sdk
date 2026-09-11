@@ -62,11 +62,11 @@ public class CustodianModelConfigTest {
     }
 
     /**
-     * Test the property 'entityModelId'
+     * Test the property 'decisionModelId'
      */
     @Test
-    public void entityModelIdTest() {
-        // TODO: test entityModelId
+    public void decisionModelIdTest() {
+        // TODO: test decisionModelId
     }
 
     /**

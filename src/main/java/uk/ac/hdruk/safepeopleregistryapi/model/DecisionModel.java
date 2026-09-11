@@ -49,7 +49,7 @@ import uk.ac.hdruk.safepeopleregistryapi.JSON;
 /**
  * Model representing decision models
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-18T08:34:20.150560795Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T15:06:32.818197734Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class DecisionModel {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -76,10 +76,10 @@ public class DecisionModel {
   @javax.annotation.Nullable
   private String description;
 
-  public static final String SERIALIZED_NAME_ENTITY_MODEL_TYPE_ID = "entity_model_type_id";
-  @SerializedName(SERIALIZED_NAME_ENTITY_MODEL_TYPE_ID)
+  public static final String SERIALIZED_NAME_DECISION_MODEL_TYPE_ID = "decision_model_type_id";
+  @SerializedName(SERIALIZED_NAME_DECISION_MODEL_TYPE_ID)
   @javax.annotation.Nullable
-  private Integer entityModelTypeId;
+  private Integer decisionModelTypeId;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -189,22 +189,22 @@ public class DecisionModel {
   }
 
 
-  public DecisionModel entityModelTypeId(@javax.annotation.Nullable Integer entityModelTypeId) {
-    this.entityModelTypeId = entityModelTypeId;
+  public DecisionModel decisionModelTypeId(@javax.annotation.Nullable Integer decisionModelTypeId) {
+    this.decisionModelTypeId = decisionModelTypeId;
     return this;
   }
 
   /**
-   * ID of the entity model type associated with the decision
-   * @return entityModelTypeId
+   * ID of the decision model type associated with the decision
+   * @return decisionModelTypeId
    */
   @javax.annotation.Nullable
-  public Integer getEntityModelTypeId() {
-    return entityModelTypeId;
+  public Integer getDecisionModelTypeId() {
+    return decisionModelTypeId;
   }
 
-  public void setEntityModelTypeId(@javax.annotation.Nullable Integer entityModelTypeId) {
-    this.entityModelTypeId = entityModelTypeId;
+  public void setDecisionModelTypeId(@javax.annotation.Nullable Integer decisionModelTypeId) {
+    this.decisionModelTypeId = decisionModelTypeId;
   }
 
 
@@ -261,14 +261,14 @@ public class DecisionModel {
         Objects.equals(this.conditions, decisionModel.conditions) &&
         Objects.equals(this.ruleClass, decisionModel.ruleClass) &&
         Objects.equals(this.description, decisionModel.description) &&
-        Objects.equals(this.entityModelTypeId, decisionModel.entityModelTypeId) &&
+        Objects.equals(this.decisionModelTypeId, decisionModel.decisionModelTypeId) &&
         Objects.equals(this.createdAt, decisionModel.createdAt) &&
         Objects.equals(this.updatedAt, decisionModel.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, modelType, conditions, ruleClass, description, entityModelTypeId, createdAt, updatedAt);
+    return Objects.hash(id, modelType, conditions, ruleClass, description, decisionModelTypeId, createdAt, updatedAt);
   }
 
   @Override
@@ -280,7 +280,7 @@ public class DecisionModel {
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("    ruleClass: ").append(toIndentedString(ruleClass)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    entityModelTypeId: ").append(toIndentedString(entityModelTypeId)).append("\n");
+    sb.append("    decisionModelTypeId: ").append(toIndentedString(decisionModelTypeId)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -301,7 +301,7 @@ public class DecisionModel {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "model_type", "conditions", "rule_class", "description", "entity_model_type_id", "created_at", "updated_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "model_type", "conditions", "rule_class", "description", "decision_model_type_id", "created_at", "updated_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(Arrays.asList("model_type", "conditions", "rule_class"));

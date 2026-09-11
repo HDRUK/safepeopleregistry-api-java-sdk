@@ -270,6 +270,22 @@ public class OrganisationTest {
     }
 
     /**
+     * Test the property 'ceOrIsoCertified'
+     */
+    @Test
+    public void ceOrIsoCertifiedTest() {
+        // TODO: test ceOrIsoCertified
+    }
+
+    /**
+     * Test the property 'cePlusOrIsoCertified'
+     */
+    @Test
+    public void cePlusOrIsoCertifiedTest() {
+        // TODO: test cePlusOrIsoCertified
+    }
+
+    /**
      * Test the property 'idvtResult'
      */
     @Test

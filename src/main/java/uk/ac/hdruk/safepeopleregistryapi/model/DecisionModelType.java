@@ -47,10 +47,10 @@ import java.util.Set;
 import uk.ac.hdruk.safepeopleregistryapi.JSON;
 
 /**
- * Model representing types of entity models
+ * Model representing types of decision models
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-18T08:34:20.150560795Z[Etc/UTC]", comments = "Generator version: 7.24.0")
-public class EntityModelType {
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T15:06:32.818197734Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+public class DecisionModelType {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
   @javax.annotation.Nullable
@@ -71,16 +71,16 @@ public class EntityModelType {
   @javax.annotation.Nullable
   private OffsetDateTime updatedAt;
 
-  public EntityModelType() {
+  public DecisionModelType() {
   }
 
-  public EntityModelType id(@javax.annotation.Nullable Integer id) {
+  public DecisionModelType id(@javax.annotation.Nullable Integer id) {
     this.id = id;
     return this;
   }
 
   /**
-   * Unique identifier for the entity model type
+   * Unique identifier for the decision model type
    * @return id
    */
   @javax.annotation.Nullable
@@ -93,13 +93,13 @@ public class EntityModelType {
   }
 
 
-  public EntityModelType name(@javax.annotation.Nullable String name) {
+  public DecisionModelType name(@javax.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
 
   /**
-   * Name of the entity model type
+   * Name of the decision model type
    * @return name
    */
   @javax.annotation.Nullable
@@ -112,13 +112,13 @@ public class EntityModelType {
   }
 
 
-  public EntityModelType createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
+  public DecisionModelType createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
   /**
-   * Timestamp when the entity model type was created
+   * Timestamp when the decision model type was created
    * @return createdAt
    */
   @javax.annotation.Nullable
@@ -131,13 +131,13 @@ public class EntityModelType {
   }
 
 
-  public EntityModelType updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
+  public DecisionModelType updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
 
   /**
-   * Timestamp when the entity model type was last updated
+   * Timestamp when the decision model type was last updated
    * @return updatedAt
    */
   @javax.annotation.Nullable
@@ -159,11 +159,11 @@ public class EntityModelType {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EntityModelType entityModelType = (EntityModelType) o;
-    return Objects.equals(this.id, entityModelType.id) &&
-        Objects.equals(this.name, entityModelType.name) &&
-        Objects.equals(this.createdAt, entityModelType.createdAt) &&
-        Objects.equals(this.updatedAt, entityModelType.updatedAt);
+    DecisionModelType decisionModelType = (DecisionModelType) o;
+    return Objects.equals(this.id, decisionModelType.id) &&
+        Objects.equals(this.name, decisionModelType.name) &&
+        Objects.equals(this.createdAt, decisionModelType.createdAt) &&
+        Objects.equals(this.updatedAt, decisionModelType.updatedAt);
   }
 
   @Override
@@ -174,7 +174,7 @@ public class EntityModelType {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EntityModelType {\n");
+    sb.append("class DecisionModelType {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
@@ -207,20 +207,20 @@ public class EntityModelType {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EntityModelType
+   * @throws IOException if the JSON Element is invalid with respect to DecisionModelType
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!EntityModelType.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in EntityModelType is not found in the empty JSON string", EntityModelType.openapiRequiredFields.toString()));
+        if (!DecisionModelType.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in DecisionModelType is not found in the empty JSON string", DecisionModelType.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!EntityModelType.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `EntityModelType` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!DecisionModelType.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `DecisionModelType` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -233,22 +233,22 @@ public class EntityModelType {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!EntityModelType.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'EntityModelType' and its subtypes
+       if (!DecisionModelType.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DecisionModelType' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<EntityModelType> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(EntityModelType.class));
+       final TypeAdapter<DecisionModelType> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DecisionModelType.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<EntityModelType>() {
+       return (TypeAdapter<T>) new TypeAdapter<DecisionModelType>() {
            @Override
-           public void write(JsonWriter out, EntityModelType value) throws IOException {
+           public void write(JsonWriter out, DecisionModelType value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public EntityModelType read(JsonReader in) throws IOException {
+           public DecisionModelType read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -259,18 +259,18 @@ public class EntityModelType {
   }
 
   /**
-   * Create an instance of EntityModelType given an JSON string
+   * Create an instance of DecisionModelType given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of EntityModelType
-   * @throws IOException if the JSON string is invalid with respect to EntityModelType
+   * @return An instance of DecisionModelType
+   * @throws IOException if the JSON string is invalid with respect to DecisionModelType
    */
-  public static EntityModelType fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, EntityModelType.class);
+  public static DecisionModelType fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DecisionModelType.class);
   }
 
   /**
-   * Convert an instance of EntityModelType to an JSON string
+   * Convert an instance of DecisionModelType to an JSON string
    *
    * @return JSON string
    */

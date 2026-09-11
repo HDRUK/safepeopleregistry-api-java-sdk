@@ -160,6 +160,22 @@ public class IdentityTest {
     }
 
     /**
+     * Test the property 'idvtDocumentFirstName'
+     */
+    @Test
+    public void idvtDocumentFirstNameTest() {
+        // TODO: test idvtDocumentFirstName
+    }
+
+    /**
+     * Test the property 'idvtDocumentValidLastName'
+     */
+    @Test
+    public void idvtDocumentValidLastNameTest() {
+        // TODO: test idvtDocumentValidLastName
+    }
+
+    /**
      * Test the property 'idvtAttemptId'
      */
     @Test

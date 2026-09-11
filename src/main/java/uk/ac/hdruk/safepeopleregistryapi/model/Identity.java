@@ -50,7 +50,7 @@ import uk.ac.hdruk.safepeopleregistryapi.JSON;
 /**
  * Model representing identity records
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-18T08:34:20.150560795Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T15:06:32.818197734Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class Identity {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -126,6 +126,16 @@ public class Identity {
   @SerializedName(SERIALIZED_NAME_IDVT_DOCUMENT_VALID_UNTIL)
   @javax.annotation.Nullable
   private LocalDate idvtDocumentValidUntil;
+
+  public static final String SERIALIZED_NAME_IDVT_DOCUMENT_FIRST_NAME = "idvt_document_first_name";
+  @SerializedName(SERIALIZED_NAME_IDVT_DOCUMENT_FIRST_NAME)
+  @javax.annotation.Nullable
+  private String idvtDocumentFirstName;
+
+  public static final String SERIALIZED_NAME_IDVT_DOCUMENT_VALID_LAST_NAME = "idvt_document_valid_last_name";
+  @SerializedName(SERIALIZED_NAME_IDVT_DOCUMENT_VALID_LAST_NAME)
+  @javax.annotation.Nullable
+  private String idvtDocumentValidLastName;
 
   public static final String SERIALIZED_NAME_IDVT_ATTEMPT_ID = "idvt_attempt_id";
   @SerializedName(SERIALIZED_NAME_IDVT_ATTEMPT_ID)
@@ -465,6 +475,44 @@ public class Identity {
   }
 
 
+  public Identity idvtDocumentFirstName(@javax.annotation.Nullable String idvtDocumentFirstName) {
+    this.idvtDocumentFirstName = idvtDocumentFirstName;
+    return this;
+  }
+
+  /**
+   * First name on the document used for IDVT
+   * @return idvtDocumentFirstName
+   */
+  @javax.annotation.Nullable
+  public String getIdvtDocumentFirstName() {
+    return idvtDocumentFirstName;
+  }
+
+  public void setIdvtDocumentFirstName(@javax.annotation.Nullable String idvtDocumentFirstName) {
+    this.idvtDocumentFirstName = idvtDocumentFirstName;
+  }
+
+
+  public Identity idvtDocumentValidLastName(@javax.annotation.Nullable String idvtDocumentValidLastName) {
+    this.idvtDocumentValidLastName = idvtDocumentValidLastName;
+    return this;
+  }
+
+  /**
+   * Last name on the document used for IDVT
+   * @return idvtDocumentValidLastName
+   */
+  @javax.annotation.Nullable
+  public String getIdvtDocumentValidLastName() {
+    return idvtDocumentValidLastName;
+  }
+
+  public void setIdvtDocumentValidLastName(@javax.annotation.Nullable String idvtDocumentValidLastName) {
+    this.idvtDocumentValidLastName = idvtDocumentValidLastName;
+  }
+
+
   public Identity idvtAttemptId(@javax.annotation.Nullable String idvtAttemptId) {
     this.idvtAttemptId = idvtAttemptId;
     return this;
@@ -680,6 +728,8 @@ public class Identity {
         Objects.equals(this.idvtDocumentNumber, identity.idvtDocumentNumber) &&
         Objects.equals(this.idvtDocumentCountry, identity.idvtDocumentCountry) &&
         Objects.equals(this.idvtDocumentValidUntil, identity.idvtDocumentValidUntil) &&
+        Objects.equals(this.idvtDocumentFirstName, identity.idvtDocumentFirstName) &&
+        Objects.equals(this.idvtDocumentValidLastName, identity.idvtDocumentValidLastName) &&
         Objects.equals(this.idvtAttemptId, identity.idvtAttemptId) &&
         Objects.equals(this.idvtContextId, identity.idvtContextId) &&
         Objects.equals(this.idvtDocumentDob, identity.idvtDocumentDob) &&
@@ -694,7 +744,7 @@ public class Identity {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, registryId, address1, address2, town, county, country, postcode, dob, idvtSuccess, idvtIdentificationNumber, idvtDocumentType, idvtDocumentNumber, idvtDocumentCountry, idvtDocumentValidUntil, idvtAttemptId, idvtContextId, idvtDocumentDob, idvtContext, idvtCompletedAt, idvtResultText, idvtStartedAt, createdAt, updatedAt, deletedAt);
+    return Objects.hash(id, registryId, address1, address2, town, county, country, postcode, dob, idvtSuccess, idvtIdentificationNumber, idvtDocumentType, idvtDocumentNumber, idvtDocumentCountry, idvtDocumentValidUntil, idvtDocumentFirstName, idvtDocumentValidLastName, idvtAttemptId, idvtContextId, idvtDocumentDob, idvtContext, idvtCompletedAt, idvtResultText, idvtStartedAt, createdAt, updatedAt, deletedAt);
   }
 
   @Override
@@ -716,6 +766,8 @@ public class Identity {
     sb.append("    idvtDocumentNumber: ").append(toIndentedString(idvtDocumentNumber)).append("\n");
     sb.append("    idvtDocumentCountry: ").append(toIndentedString(idvtDocumentCountry)).append("\n");
     sb.append("    idvtDocumentValidUntil: ").append(toIndentedString(idvtDocumentValidUntil)).append("\n");
+    sb.append("    idvtDocumentFirstName: ").append(toIndentedString(idvtDocumentFirstName)).append("\n");
+    sb.append("    idvtDocumentValidLastName: ").append(toIndentedString(idvtDocumentValidLastName)).append("\n");
     sb.append("    idvtAttemptId: ").append(toIndentedString(idvtAttemptId)).append("\n");
     sb.append("    idvtContextId: ").append(toIndentedString(idvtContextId)).append("\n");
     sb.append("    idvtDocumentDob: ").append(toIndentedString(idvtDocumentDob)).append("\n");
@@ -744,7 +796,7 @@ public class Identity {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "registry_id", "address_1", "address_2", "town", "county", "country", "postcode", "dob", "idvt_success", "idvt_identification_number", "idvt_document_type", "idvt_document_number", "idvt_document_country", "idvt_document_valid_until", "idvt_attempt_id", "idvt_context_id", "idvt_document_dob", "idvt_context", "idvt_completed_at", "idvt_result_text", "idvt_started_at", "created_at", "updated_at", "deleted_at"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "registry_id", "address_1", "address_2", "town", "county", "country", "postcode", "dob", "idvt_success", "idvt_identification_number", "idvt_document_type", "idvt_document_number", "idvt_document_country", "idvt_document_valid_until", "idvt_document_first_name", "idvt_document_valid_last_name", "idvt_attempt_id", "idvt_context_id", "idvt_document_dob", "idvt_context", "idvt_completed_at", "idvt_result_text", "idvt_started_at", "created_at", "updated_at", "deleted_at"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -800,6 +852,12 @@ public class Identity {
       }
       if ((jsonObj.get("idvt_document_country") != null && !jsonObj.get("idvt_document_country").isJsonNull()) && !jsonObj.get("idvt_document_country").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `idvt_document_country` to be a primitive type in the JSON string but got `%s`", jsonObj.get("idvt_document_country").toString()));
+      }
+      if ((jsonObj.get("idvt_document_first_name") != null && !jsonObj.get("idvt_document_first_name").isJsonNull()) && !jsonObj.get("idvt_document_first_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `idvt_document_first_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("idvt_document_first_name").toString()));
+      }
+      if ((jsonObj.get("idvt_document_valid_last_name") != null && !jsonObj.get("idvt_document_valid_last_name").isJsonNull()) && !jsonObj.get("idvt_document_valid_last_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `idvt_document_valid_last_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("idvt_document_valid_last_name").toString()));
       }
       if ((jsonObj.get("idvt_attempt_id") != null && !jsonObj.get("idvt_attempt_id").isJsonNull()) && !jsonObj.get("idvt_attempt_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `idvt_attempt_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("idvt_attempt_id").toString()));

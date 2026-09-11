@@ -37,6 +37,8 @@ Organisation model
 |**cePlusCertified** | **Boolean** |  |  [optional] |
 |**cePlusCertificationNum** | **String** |  |  [optional] |
 |**cePlusExpiryDate** | **String** |  |  [optional] |
+|**ceOrIsoCertified** | **Boolean** | True if either CE or ISO 27001 certification is currently valid |  [optional] |
+|**cePlusOrIsoCertified** | **Boolean** | True if either CE+ or ISO 27001 certification is currently valid |  [optional] |
 |**idvtResult** | **Integer** |  |  [optional] |
 |**idvtResultPerc** | **Integer** |  |  [optional] |
 |**idvtErrors** | **String** |  |  [optional] |

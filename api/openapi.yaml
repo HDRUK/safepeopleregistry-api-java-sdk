@@ -21,6 +21,8 @@ tags:
   name: Resolution
 - description: API endpoints for managing sectors
   name: Sector
+- description: API endpoints for managing enterprise SAML SSO connections
+  name: SsoTenant
 - description: API endpoints for receiving vendor webhook callbacks
   name: VendorWebhookReceiver
 - description: API Endpoints of Webhooks
@@ -61,6 +63,8 @@ tags:
   name: Identity
 - description: Infringement
   name: Infringement
+- description: LinkedIdentity
+  name: LinkedIdentity
 - description: Notifications
   name: Notifications
 - description: organisation
@@ -605,7 +609,7 @@ components:
         updated_at:
           example: 2023-10-10T18:03:00Z
           type: string
-        entity_model_id:
+        decision_model_id:
           example: 1
           type: integer
         active:
@@ -739,8 +743,8 @@ components:
           description: Description of the decision model
           example: Decision model for user validation
           type: string
-        entity_model_type_id:
-          description: ID of the entity model type associated with the decision
+        decision_model_type_id:
+          description: ID of the decision model type associated with the decision
           example: 42
           type: integer
         created_at:
@@ -758,6 +762,29 @@ components:
       - model_type
       - rule_class
       title: DecisionModel
+      type: object
+    DecisionModelType:
+      description: Model representing types of decision models
+      properties:
+        id:
+          description: Unique identifier for the decision model type
+          example: 1
+          type: integer
+        name:
+          description: Name of the decision model type
+          example: Decision Models
+          type: string
+        created_at:
+          description: Timestamp when the decision model type was created
+          example: 2025-06-25T12:00:00Z
+          format: date-time
+          type: string
+        updated_at:
+          description: Timestamp when the decision model type was last updated
+          example: 2025-06-25T12:00:00Z
+          format: date-time
+          type: string
+      title: DecisionModelType
       type: object
     Department:
       description: Model representing departments
@@ -869,81 +896,6 @@ components:
           format: date-time
           type: string
       title: Endorsement
-      type: object
-    EntityModel:
-      description: Model representing entity models
-      properties:
-        id:
-          description: Unique identifier for the entity model
-          example: 1
-          type: integer
-        name:
-          description: Name of the entity model
-          example: Data Processing Model
-          type: string
-        description:
-          description: Description of the entity model
-          example: This model processes data based on predefined rules.
-          type: string
-        entity_model_type_id:
-          description: ID of the entity model type associated with this model
-          example: 2
-          type: integer
-        calls_file:
-          description: Indicates whether the model calls a file
-          example: true
-          type: boolean
-        file_path:
-          description: Path to the file called by the model
-          example: /path/to/file
-          type: string
-        calls_operation:
-          description: Indicates whether the model calls an operation
-          example: false
-          type: boolean
-        operation:
-          description: Operation called by the model
-          example: processData
-          type: string
-        active:
-          description: "Indicates whether the model is active (1 for active, 0 for\
-            \ inactive)"
-          example: 1
-          type: integer
-        created_at:
-          description: Timestamp when the entity model was created
-          example: 2025-06-25T12:00:00Z
-          format: date-time
-          type: string
-        updated_at:
-          description: Timestamp when the entity model was last updated
-          example: 2025-06-25T12:00:00Z
-          format: date-time
-          type: string
-      title: EntityModel
-      type: object
-    EntityModelType:
-      description: Model representing types of entity models
-      properties:
-        id:
-          description: Unique identifier for the entity model type
-          example: 1
-          type: integer
-        name:
-          description: Name of the entity model type
-          example: Decision Models
-          type: string
-        created_at:
-          description: Timestamp when the entity model type was created
-          example: 2025-06-25T12:00:00Z
-          format: date-time
-          type: string
-        updated_at:
-          description: Timestamp when the entity model type was last updated
-          example: 2025-06-25T12:00:00Z
-          format: date-time
-          type: string
-      title: EntityModelType
       type: object
     Experience:
       description: Model representing experiences
@@ -1165,6 +1117,14 @@ components:
           description: Validity date of the document used for IDVT
           example: 2030-01-01
           format: date
+          type: string
+        idvt_document_first_name:
+          description: First name on the document used for IDVT
+          example: Joe
+          type: string
+        idvt_document_valid_last_name:
+          description: Last name on the document used for IDVT
+          example: Bloggs
           type: string
         idvt_attempt_id:
           description: ID of the IDVT attempt
@@ -1412,6 +1372,15 @@ components:
         ce_plus_expiry_date:
           example: 2026-12-01
           type: string
+        ce_or_iso_certified:
+          description: True if either CE or ISO 27001 certification is currently valid
+          example: true
+          type: boolean
+        ce_plus_or_iso_certified:
+          description: True if either CE+ or ISO 27001 certification is currently
+            valid
+          example: true
+          type: boolean
         idvt_result:
           example: 1
           type: integer
@@ -2057,6 +2026,80 @@ components:
           format: date-time
           type: string
       title: Sector
+      type: object
+    SsoTenant:
+      description: An enterprise customer's SAML Identity Provider connection
+      properties:
+        id:
+          description: Model primary key
+          example: 1
+          type: integer
+        created_at:
+          example: 2026-08-28T09:00:00Z
+          type: string
+        updated_at:
+          example: 2026-08-28T09:00:00Z
+          type: string
+        name:
+          example: Acme Corp
+          type: string
+        idp_alias:
+          example: acme-corp
+          type: string
+        metadata_url:
+          example: https://sso.acme.example/federationmetadata.xml
+          type: string
+        entity_id:
+          example: https://sso.acme.example/adfs/services/trust
+          type: string
+        metadata_imported_at:
+          example: 2026-08-28T09:00:00Z
+          type: string
+        enabled:
+          example: true
+          type: boolean
+        sp_entity_id:
+          description: Keycloak's own SP entity ID - null until approved. Register
+            this as the SAML Identifier on the customer's IdP.
+          example: https://keycloak.dev.hdruk.cloud/realms/SOURSD
+          type: string
+        sp_acs_url:
+          description: Keycloak's ACS/reply URL for this tenant - null until approved.
+          example: https://keycloak.dev.hdruk.cloud/realms/SOURSD/broker/acme-corp/endpoint
+          type: string
+        sp_metadata_url:
+          description: Downloadable SP metadata descriptor most IdPs can import directly
+            - null until approved.
+          example: https://keycloak.dev.hdruk.cloud/realms/SOURSD/broker/acme-corp/endpoint/descriptor
+          type: string
+        status:
+          description: "One of pending, approved, rejected"
+          example: pending
+          type: string
+        submitted_by_user_id:
+          description: ID of the user who submitted this tenant for approval
+          example: 42
+          type: integer
+        rejected_reason:
+          description: Reason given when status is rejected - null otherwise
+          example: Metadata could not be validated
+          type: string
+      title: SsoTenant
+      type: object
+    SsoTenantDomain:
+      description: An email domain routed to a Registry SSO tenant's Identity Provider
+      properties:
+        id:
+          description: Model primary key
+          example: 1
+          type: integer
+        sso_tenant_id:
+          example: 1
+          type: integer
+        domain:
+          example: acme.com
+          type: string
+      title: SsoTenantDomain
       type: object
     State:
       description: Model representing states

@@ -48,7 +48,7 @@ import uk.ac.hdruk.safepeopleregistryapi.JSON;
 /**
  * Organisation model
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-08-18T08:34:20.150560795Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-11T15:06:32.818197734Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class Organisation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -194,6 +194,16 @@ public class Organisation {
   @SerializedName(SERIALIZED_NAME_CE_PLUS_EXPIRY_DATE)
   @javax.annotation.Nullable
   private String cePlusExpiryDate;
+
+  public static final String SERIALIZED_NAME_CE_OR_ISO_CERTIFIED = "ce_or_iso_certified";
+  @SerializedName(SERIALIZED_NAME_CE_OR_ISO_CERTIFIED)
+  @javax.annotation.Nullable
+  private Boolean ceOrIsoCertified;
+
+  public static final String SERIALIZED_NAME_CE_PLUS_OR_ISO_CERTIFIED = "ce_plus_or_iso_certified";
+  @SerializedName(SERIALIZED_NAME_CE_PLUS_OR_ISO_CERTIFIED)
+  @javax.annotation.Nullable
+  private Boolean cePlusOrIsoCertified;
 
   public static final String SERIALIZED_NAME_IDVT_RESULT = "idvt_result";
   @SerializedName(SERIALIZED_NAME_IDVT_RESULT)
@@ -839,6 +849,44 @@ public class Organisation {
   }
 
 
+  public Organisation ceOrIsoCertified(@javax.annotation.Nullable Boolean ceOrIsoCertified) {
+    this.ceOrIsoCertified = ceOrIsoCertified;
+    return this;
+  }
+
+  /**
+   * True if either CE or ISO 27001 certification is currently valid
+   * @return ceOrIsoCertified
+   */
+  @javax.annotation.Nullable
+  public Boolean getCeOrIsoCertified() {
+    return ceOrIsoCertified;
+  }
+
+  public void setCeOrIsoCertified(@javax.annotation.Nullable Boolean ceOrIsoCertified) {
+    this.ceOrIsoCertified = ceOrIsoCertified;
+  }
+
+
+  public Organisation cePlusOrIsoCertified(@javax.annotation.Nullable Boolean cePlusOrIsoCertified) {
+    this.cePlusOrIsoCertified = cePlusOrIsoCertified;
+    return this;
+  }
+
+  /**
+   * True if either CE+ or ISO 27001 certification is currently valid
+   * @return cePlusOrIsoCertified
+   */
+  @javax.annotation.Nullable
+  public Boolean getCePlusOrIsoCertified() {
+    return cePlusOrIsoCertified;
+  }
+
+  public void setCePlusOrIsoCertified(@javax.annotation.Nullable Boolean cePlusOrIsoCertified) {
+    this.cePlusOrIsoCertified = cePlusOrIsoCertified;
+  }
+
+
   public Organisation idvtResult(@javax.annotation.Nullable Integer idvtResult) {
     this.idvtResult = idvtResult;
     return this;
@@ -1220,6 +1268,8 @@ public class Organisation {
         Objects.equals(this.cePlusCertified, organisation.cePlusCertified) &&
         Objects.equals(this.cePlusCertificationNum, organisation.cePlusCertificationNum) &&
         Objects.equals(this.cePlusExpiryDate, organisation.cePlusExpiryDate) &&
+        Objects.equals(this.ceOrIsoCertified, organisation.ceOrIsoCertified) &&
+        Objects.equals(this.cePlusOrIsoCertified, organisation.cePlusOrIsoCertified) &&
         Objects.equals(this.idvtResult, organisation.idvtResult) &&
         Objects.equals(this.idvtResultPerc, organisation.idvtResultPerc) &&
         Objects.equals(this.idvtErrors, organisation.idvtErrors) &&
@@ -1242,7 +1292,7 @@ public class Organisation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, updatedAt, organisationName, address1, address2, town, county, country, postcode, leadApplicantOrganisationName, leadApplicantEmail, organisationUniqueId, applicantNames, fundersAndSponsors, subLicenseArrangements, verified, dsptkOdsCode, dsptkCertified, dsptkExpiryDate, iso27001Certified, iso27001CertificationNum, isoExpiryDate, ceCertified, ceCertificationNum, ceExpiryDate, cePlusCertified, cePlusCertificationNum, cePlusExpiryDate, idvtResult, idvtResultPerc, idvtErrors, idvtCompletedAt, companiesHouseNo, sectorId, rorId, website, smbStatus, organisationSize, unclaimed, systemApproved, odsId, dsptkStatus, dsptkDateLastPublished, icoRegistrationId, icoDateRegistered, icoExpiryDate);
+    return Objects.hash(id, createdAt, updatedAt, organisationName, address1, address2, town, county, country, postcode, leadApplicantOrganisationName, leadApplicantEmail, organisationUniqueId, applicantNames, fundersAndSponsors, subLicenseArrangements, verified, dsptkOdsCode, dsptkCertified, dsptkExpiryDate, iso27001Certified, iso27001CertificationNum, isoExpiryDate, ceCertified, ceCertificationNum, ceExpiryDate, cePlusCertified, cePlusCertificationNum, cePlusExpiryDate, ceOrIsoCertified, cePlusOrIsoCertified, idvtResult, idvtResultPerc, idvtErrors, idvtCompletedAt, companiesHouseNo, sectorId, rorId, website, smbStatus, organisationSize, unclaimed, systemApproved, odsId, dsptkStatus, dsptkDateLastPublished, icoRegistrationId, icoDateRegistered, icoExpiryDate);
   }
 
   @Override
@@ -1278,6 +1328,8 @@ public class Organisation {
     sb.append("    cePlusCertified: ").append(toIndentedString(cePlusCertified)).append("\n");
     sb.append("    cePlusCertificationNum: ").append(toIndentedString(cePlusCertificationNum)).append("\n");
     sb.append("    cePlusExpiryDate: ").append(toIndentedString(cePlusExpiryDate)).append("\n");
+    sb.append("    ceOrIsoCertified: ").append(toIndentedString(ceOrIsoCertified)).append("\n");
+    sb.append("    cePlusOrIsoCertified: ").append(toIndentedString(cePlusOrIsoCertified)).append("\n");
     sb.append("    idvtResult: ").append(toIndentedString(idvtResult)).append("\n");
     sb.append("    idvtResultPerc: ").append(toIndentedString(idvtResultPerc)).append("\n");
     sb.append("    idvtErrors: ").append(toIndentedString(idvtErrors)).append("\n");
@@ -1314,7 +1366,7 @@ public class Organisation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "created_at", "updated_at", "organisation_name", "address_1", "address_2", "town", "county", "country", "postcode", "lead_applicant_organisation_name", "lead_applicant_email", "organisation_unique_id", "applicant_names", "funders_and_sponsors", "sub_license_arrangements", "verified", "dsptk_ods_code", "dsptk_certified", "dsptk_expiry_date", "iso_27001_certified", "iso_27001_certification_num", "iso_expiry_date", "ce_certified", "ce_certification_num", "ce_expiry_date", "ce_plus_certified", "ce_plus_certification_num", "ce_plus_expiry_date", "idvt_result", "idvt_result_perc", "idvt_errors", "idvt_completed_at", "companies_house_no", "sector_id", "ror_id", "website", "smb_status", "organisation_size", "unclaimed", "system_approved", "ods_id", "dsptk_status", "dsptk_date_last_published", "ico_registration_id", "ico_date_registered", "ico_expiry_date"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created_at", "updated_at", "organisation_name", "address_1", "address_2", "town", "county", "country", "postcode", "lead_applicant_organisation_name", "lead_applicant_email", "organisation_unique_id", "applicant_names", "funders_and_sponsors", "sub_license_arrangements", "verified", "dsptk_ods_code", "dsptk_certified", "dsptk_expiry_date", "iso_27001_certified", "iso_27001_certification_num", "iso_expiry_date", "ce_certified", "ce_certification_num", "ce_expiry_date", "ce_plus_certified", "ce_plus_certification_num", "ce_plus_expiry_date", "ce_or_iso_certified", "ce_plus_or_iso_certified", "idvt_result", "idvt_result_perc", "idvt_errors", "idvt_completed_at", "companies_house_no", "sector_id", "ror_id", "website", "smb_status", "organisation_size", "unclaimed", "system_approved", "ods_id", "dsptk_status", "dsptk_date_last_published", "ico_registration_id", "ico_date_registered", "ico_expiry_date"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
