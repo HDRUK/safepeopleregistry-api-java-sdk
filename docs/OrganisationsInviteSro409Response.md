@@ -1,6 +1,6 @@
 
 
-# VendorWebhookReceiverReceive400Response
+# OrganisationsInviteSro409Response
 
 
 ## Properties

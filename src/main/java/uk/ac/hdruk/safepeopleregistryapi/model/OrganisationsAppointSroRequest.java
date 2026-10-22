@@ -46,34 +46,34 @@ import java.util.Set;
 import uk.ac.hdruk.safepeopleregistryapi.JSON;
 
 /**
- * VendorWebhookReceiverReceive400Response
+ * OrganisationsAppointSroRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T14:33:22.735334762Z[Etc/UTC]", comments = "Generator version: 7.24.0")
-public class VendorWebhookReceiverReceive400Response {
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-22T09:59:09.054128375Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+public class OrganisationsAppointSroRequest {
+  public static final String SERIALIZED_NAME_USER_ID = "user_id";
+  @SerializedName(SERIALIZED_NAME_USER_ID)
   @javax.annotation.Nullable
-  private String message;
+  private Integer userId;
 
-  public VendorWebhookReceiverReceive400Response() {
+  public OrganisationsAppointSroRequest() {
   }
 
-  public VendorWebhookReceiverReceive400Response message(@javax.annotation.Nullable String message) {
-    this.message = message;
+  public OrganisationsAppointSroRequest userId(@javax.annotation.Nullable Integer userId) {
+    this.userId = userId;
     return this;
   }
 
   /**
-   * Get message
-   * @return message
+   * ID of the claimed member to appoint
+   * @return userId
    */
   @javax.annotation.Nullable
-  public String getMessage() {
-    return message;
+  public Integer getUserId() {
+    return userId;
   }
 
-  public void setMessage(@javax.annotation.Nullable String message) {
-    this.message = message;
+  public void setUserId(@javax.annotation.Nullable Integer userId) {
+    this.userId = userId;
   }
 
 
@@ -86,20 +86,20 @@ public class VendorWebhookReceiverReceive400Response {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    VendorWebhookReceiverReceive400Response vendorWebhookReceiverReceive400Response = (VendorWebhookReceiverReceive400Response) o;
-    return Objects.equals(this.message, vendorWebhookReceiverReceive400Response.message);
+    OrganisationsAppointSroRequest organisationsAppointSroRequest = (OrganisationsAppointSroRequest) o;
+    return Objects.equals(this.userId, organisationsAppointSroRequest.userId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(message);
+    return Objects.hash(userId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class VendorWebhookReceiverReceive400Response {\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
+    sb.append("class OrganisationsAppointSroRequest {\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -118,7 +118,7 @@ public class VendorWebhookReceiverReceive400Response {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("message"));
+    openapiFields = new HashSet<String>(Arrays.asList("user_id"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -128,48 +128,45 @@ public class VendorWebhookReceiverReceive400Response {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to VendorWebhookReceiverReceive400Response
+   * @throws IOException if the JSON Element is invalid with respect to OrganisationsAppointSroRequest
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!VendorWebhookReceiverReceive400Response.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in VendorWebhookReceiverReceive400Response is not found in the empty JSON string", VendorWebhookReceiverReceive400Response.openapiRequiredFields.toString()));
+        if (!OrganisationsAppointSroRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in OrganisationsAppointSroRequest is not found in the empty JSON string", OrganisationsAppointSroRequest.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!VendorWebhookReceiverReceive400Response.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `VendorWebhookReceiverReceive400Response` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!OrganisationsAppointSroRequest.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `OrganisationsAppointSroRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("message") != null && !jsonObj.get("message").isJsonNull()) && !jsonObj.get("message").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `message` to be a primitive type in the JSON string but got `%s`", jsonObj.get("message").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!VendorWebhookReceiverReceive400Response.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'VendorWebhookReceiverReceive400Response' and its subtypes
+       if (!OrganisationsAppointSroRequest.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'OrganisationsAppointSroRequest' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<VendorWebhookReceiverReceive400Response> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(VendorWebhookReceiverReceive400Response.class));
+       final TypeAdapter<OrganisationsAppointSroRequest> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(OrganisationsAppointSroRequest.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<VendorWebhookReceiverReceive400Response>() {
+       return (TypeAdapter<T>) new TypeAdapter<OrganisationsAppointSroRequest>() {
            @Override
-           public void write(JsonWriter out, VendorWebhookReceiverReceive400Response value) throws IOException {
+           public void write(JsonWriter out, OrganisationsAppointSroRequest value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public VendorWebhookReceiverReceive400Response read(JsonReader in) throws IOException {
+           public OrganisationsAppointSroRequest read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -180,18 +177,18 @@ public class VendorWebhookReceiverReceive400Response {
   }
 
   /**
-   * Create an instance of VendorWebhookReceiverReceive400Response given an JSON string
+   * Create an instance of OrganisationsAppointSroRequest given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of VendorWebhookReceiverReceive400Response
-   * @throws IOException if the JSON string is invalid with respect to VendorWebhookReceiverReceive400Response
+   * @return An instance of OrganisationsAppointSroRequest
+   * @throws IOException if the JSON string is invalid with respect to OrganisationsAppointSroRequest
    */
-  public static VendorWebhookReceiverReceive400Response fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, VendorWebhookReceiverReceive400Response.class);
+  public static OrganisationsAppointSroRequest fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, OrganisationsAppointSroRequest.class);
   }
 
   /**
-   * Convert an instance of VendorWebhookReceiverReceive400Response to an JSON string
+   * Convert an instance of OrganisationsAppointSroRequest to an JSON string
    *
    * @return JSON string
    */

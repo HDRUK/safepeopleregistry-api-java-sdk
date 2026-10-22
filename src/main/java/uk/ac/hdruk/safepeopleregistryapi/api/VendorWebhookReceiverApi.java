@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import uk.ac.hdruk.safepeopleregistryapi.model.OrganisationsAppointSro400Response;
 import uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive200Response;
-import uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive400Response;
 import uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive500Response;
 
 import java.lang.reflect.Type;

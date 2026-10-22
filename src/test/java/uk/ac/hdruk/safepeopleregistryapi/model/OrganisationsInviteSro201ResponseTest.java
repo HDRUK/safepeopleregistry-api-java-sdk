@@ -24,17 +24,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for VendorWebhookReceiverReceive400Response
+ * Model tests for OrganisationsInviteSro201Response
  */
-public class VendorWebhookReceiverReceive400ResponseTest {
-    private final VendorWebhookReceiverReceive400Response model = new VendorWebhookReceiverReceive400Response();
+public class OrganisationsInviteSro201ResponseTest {
+    private final OrganisationsInviteSro201Response model = new OrganisationsInviteSro201Response();
 
     /**
-     * Model tests for VendorWebhookReceiverReceive400Response
+     * Model tests for OrganisationsInviteSro201Response
      */
     @Test
-    public void testVendorWebhookReceiverReceive400Response() {
-        // TODO: test VendorWebhookReceiverReceive400Response
+    public void testOrganisationsInviteSro201Response() {
+        // TODO: test OrganisationsInviteSro201Response
     }
 
     /**
@@ -43,6 +43,14 @@ public class VendorWebhookReceiverReceive400ResponseTest {
     @Test
     public void messageTest() {
         // TODO: test message
+    }
+
+    /**
+     * Test the property 'data'
+     */
+    @Test
+    public void dataTest() {
+        // TODO: test data
     }
 
 }

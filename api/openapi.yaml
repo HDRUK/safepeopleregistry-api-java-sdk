@@ -166,6 +166,224 @@ paths:
       - Feature
       x-accepts:
       - application/json
+  /api/v1/organisations/{id}/sro:
+    put:
+      description: "Hands the SRO role over immediately: the appointee becomes SRO,\
+        \ the current SRO becomes a delegate, and an invited SRO keeps their invitation\
+        \ but will join as a delegate. Delegates can appoint while the organisation\
+        \ has no claimed SRO; after that only the SRO can."
+      operationId: organisationsAppointSro
+      parameters:
+      - description: organisations entry ID
+        example: "1"
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          description: organisations entry ID
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/organisationsAppointSro_request"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsAppointSro_200_response"
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsAppointSro_400_response"
+          description: Invalid argument(s)
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsAppointSro_403_response"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/featureIndex_404_response"
+          description: The user is not a claimed member of this organisation
+      security:
+      - bearerAuth: []
+      summary: organisations@appointSro
+      tags:
+      - organisations
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /api/v1/organisations/{id}/sro/invite:
+    post:
+      description: Creates an invited (unclaimed) SRO and emails them an invitation.
+        The current SRO keeps the role until the invitee claims their account; any
+        other invited SRO keeps their invitation but will join as a delegate. Delegates
+        can invite while the organisation has no claimed SRO; after that only the
+        SRO can.
+      operationId: organisationsInviteSro
+      parameters:
+      - description: organisations entry ID
+        example: "1"
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          description: organisations entry ID
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/organisationsInviteSro_request"
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsInviteSro_201_response"
+          description: Created
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsAppointSro_400_response"
+          description: Invalid argument(s)
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsAppointSro_403_response"
+          description: Forbidden
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsInviteSro_409_response"
+          description: "The email already belongs to a user; appoint an existing member\
+            \ with PUT /organisations/{id}/sro instead"
+      security:
+      - bearerAuth: []
+      summary: organisations@inviteSro
+      tags:
+      - organisations
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /api/v1/organisations/{id}/sro/resend_invite:
+    post:
+      description: Resends the pending SRO invitation with the code it already has.
+        Delegates can resend while the organisation has no claimed SRO; after that
+        only the SRO can.
+      operationId: organisationsResendSroInvite
+      parameters:
+      - description: organisations entry ID
+        example: "1"
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          description: organisations entry ID
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsAppointSro_200_response"
+          description: Success
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsAppointSro_403_response"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/featureIndex_404_response"
+          description: The organisation has no pending SRO invitation
+      security:
+      - bearerAuth: []
+      summary: organisations@resendSroInvite
+      tags:
+      - organisations
+      x-accepts:
+      - application/json
+  /api/v1/organisations/{id}/delegates/{userId}:
+    delete:
+      description: Detaches a delegate from the organisation and notifies them and
+        the remaining members. The SRO and delegates of the organisation can remove
+        other delegates; the SRO cannot be removed and nobody can remove themselves.
+      operationId: organisationsRemoveDelegate
+      parameters:
+      - description: organisations entry ID
+        example: "1"
+        explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          description: organisations entry ID
+          type: integer
+        style: simple
+      - description: ID of the delegate to remove
+        example: "1"
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          description: users entry ID
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsAppointSro_200_response"
+          description: Success
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsAppointSro_400_response"
+          description: Invalid argument(s)
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/organisationsAppointSro_403_response"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/featureIndex_404_response"
+          description: The user is not a delegate of this organisation
+      security:
+      - bearerAuth: []
+      summary: organisations@removeDelegate
+      tags:
+      - organisations
+      x-accepts:
+      - application/json
   /api/v1/project_users/bulk:
     post:
       description: Invite multiple users and attach them to a project
@@ -279,7 +497,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/vendorWebhookReceiverReceive_400_response"
+                $ref: "#/components/schemas/organisationsAppointSro_400_response"
           description: Invalid argument(s)
         "500":
           content:
@@ -2656,6 +2874,79 @@ components:
           example: not found
           type: string
       type: object
+    organisationsAppointSro_request:
+      properties:
+        user_id:
+          description: ID of the claimed member to appoint
+          example: 1
+          type: integer
+      type: object
+    organisationsAppointSro_200_response:
+      example:
+        message: success
+      properties:
+        message:
+          example: success
+          type: string
+      type: object
+    organisationsAppointSro_400_response:
+      example:
+        message: Invalid argument(s)
+      properties:
+        message:
+          example: Invalid argument(s)
+          type: string
+      type: object
+    organisationsAppointSro_403_response:
+      example:
+        message: forbidden
+      properties:
+        message:
+          example: forbidden
+          type: string
+      type: object
+    organisationsInviteSro_request:
+      properties:
+        first_name:
+          example: Jane
+          type: string
+        last_name:
+          example: Doe
+          type: string
+        email:
+          example: jane.doe@example.com
+          type: string
+        role:
+          description: Job title
+          example: Head of Research
+          type: string
+        department_id:
+          description: One of the organisation's departments
+          example: 1
+          nullable: true
+          type: integer
+      type: object
+    organisationsInviteSro_201_response:
+      example:
+        message: success
+        data: 1
+      properties:
+        message:
+          example: success
+          type: string
+        data:
+          description: ID of the invited user
+          example: 1
+          type: integer
+      type: object
+    organisationsInviteSro_409_response:
+      example:
+        message: conflict
+      properties:
+        message:
+          example: conflict
+          type: string
+      type: object
     projectUsersBulkInviteProjectUsers_request_users_inner:
       properties:
         firstName:
@@ -3182,14 +3473,6 @@ components:
           items:
             type: object
           type: array
-      type: object
-    vendorWebhookReceiverReceive_400_response:
-      example:
-        message: Invalid argument(s)
-      properties:
-        message:
-          example: Invalid argument(s)
-          type: string
       type: object
     vendorWebhookReceiverReceive_500_response:
       example:

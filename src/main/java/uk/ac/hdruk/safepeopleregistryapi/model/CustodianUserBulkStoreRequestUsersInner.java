@@ -48,7 +48,7 @@ import uk.ac.hdruk.safepeopleregistryapi.JSON;
 /**
  * CustodianUserBulkStoreRequestUsersInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-09-18T14:33:22.735334762Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-22T09:59:09.054128375Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class CustodianUserBulkStoreRequestUsersInner {
   public static final String SERIALIZED_NAME_FIRST_NAME = "first_name";
   @SerializedName(SERIALIZED_NAME_FIRST_NAME)

@@ -135,6 +135,13 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.OrganisationHasDepartment.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.OrganisationHasFile.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.OrganisationHasSubsidiary.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.OrganisationsAppointSro200Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.OrganisationsAppointSro400Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.OrganisationsAppointSro403Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.OrganisationsAppointSroRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.OrganisationsInviteSro201Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.OrganisationsInviteSro409Response.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.OrganisationsInviteSroRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.PendingInvite.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.Permission.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.ProfessionalRegistration.CustomTypeAdapterFactory());
@@ -180,7 +187,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.ValidationLog.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.ValidationLogComment.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive200Response.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive400Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.VendorWebhookReceiverReceive500Response.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new uk.ac.hdruk.safepeopleregistryapi.model.WebhookEventTrigger.CustomTypeAdapterFactory());
         gson = gsonBuilder.create();
