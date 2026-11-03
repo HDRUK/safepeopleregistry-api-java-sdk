@@ -11,6 +11,7 @@ Organisation model
 |**id** | **Integer** | Model primary key |  [optional] |
 |**createdAt** | **String** |  |  [optional] |
 |**updatedAt** | **String** |  |  [optional] |
+|**statusChangedAt** | **String** | When the organisation&#39;s status last changed. Only returned by the organisations index. |  [optional] |
 |**organisationName** | **String** |  |  [optional] |
 |**address1** | **String** |  |  [optional] |
 |**address2** | **String** |  |  [optional] |

@@ -48,7 +48,7 @@ import uk.ac.hdruk.safepeopleregistryapi.JSON;
 /**
  * Organisation model
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-22T09:59:09.054128375Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-03T12:18:39.378523076Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class Organisation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -64,6 +64,11 @@ public class Organisation {
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
   @javax.annotation.Nullable
   private String updatedAt;
+
+  public static final String SERIALIZED_NAME_STATUS_CHANGED_AT = "status_changed_at";
+  @SerializedName(SERIALIZED_NAME_STATUS_CHANGED_AT)
+  @javax.annotation.Nullable
+  private String statusChangedAt;
 
   public static final String SERIALIZED_NAME_ORGANISATION_NAME = "organisation_name";
   @SerializedName(SERIALIZED_NAME_ORGANISATION_NAME)
@@ -352,6 +357,25 @@ public class Organisation {
 
   public void setUpdatedAt(@javax.annotation.Nullable String updatedAt) {
     this.updatedAt = updatedAt;
+  }
+
+
+  public Organisation statusChangedAt(@javax.annotation.Nullable String statusChangedAt) {
+    this.statusChangedAt = statusChangedAt;
+    return this;
+  }
+
+  /**
+   * When the organisation&#39;s status last changed. Only returned by the organisations index.
+   * @return statusChangedAt
+   */
+  @javax.annotation.Nullable
+  public String getStatusChangedAt() {
+    return statusChangedAt;
+  }
+
+  public void setStatusChangedAt(@javax.annotation.Nullable String statusChangedAt) {
+    this.statusChangedAt = statusChangedAt;
   }
 
 
@@ -1242,6 +1266,7 @@ public class Organisation {
     return Objects.equals(this.id, organisation.id) &&
         Objects.equals(this.createdAt, organisation.createdAt) &&
         Objects.equals(this.updatedAt, organisation.updatedAt) &&
+        Objects.equals(this.statusChangedAt, organisation.statusChangedAt) &&
         Objects.equals(this.organisationName, organisation.organisationName) &&
         Objects.equals(this.address1, organisation.address1) &&
         Objects.equals(this.address2, organisation.address2) &&
@@ -1292,7 +1317,7 @@ public class Organisation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, updatedAt, organisationName, address1, address2, town, county, country, postcode, leadApplicantOrganisationName, leadApplicantEmail, organisationUniqueId, applicantNames, fundersAndSponsors, subLicenseArrangements, verified, dsptkOdsCode, dsptkCertified, dsptkExpiryDate, iso27001Certified, iso27001CertificationNum, isoExpiryDate, ceCertified, ceCertificationNum, ceExpiryDate, cePlusCertified, cePlusCertificationNum, cePlusExpiryDate, ceOrIsoCertified, cePlusOrIsoCertified, idvtResult, idvtResultPerc, idvtErrors, idvtCompletedAt, companiesHouseNo, sectorId, rorId, website, smbStatus, organisationSize, unclaimed, systemApproved, odsId, dsptkStatus, dsptkDateLastPublished, icoRegistrationId, icoDateRegistered, icoExpiryDate);
+    return Objects.hash(id, createdAt, updatedAt, statusChangedAt, organisationName, address1, address2, town, county, country, postcode, leadApplicantOrganisationName, leadApplicantEmail, organisationUniqueId, applicantNames, fundersAndSponsors, subLicenseArrangements, verified, dsptkOdsCode, dsptkCertified, dsptkExpiryDate, iso27001Certified, iso27001CertificationNum, isoExpiryDate, ceCertified, ceCertificationNum, ceExpiryDate, cePlusCertified, cePlusCertificationNum, cePlusExpiryDate, ceOrIsoCertified, cePlusOrIsoCertified, idvtResult, idvtResultPerc, idvtErrors, idvtCompletedAt, companiesHouseNo, sectorId, rorId, website, smbStatus, organisationSize, unclaimed, systemApproved, odsId, dsptkStatus, dsptkDateLastPublished, icoRegistrationId, icoDateRegistered, icoExpiryDate);
   }
 
   @Override
@@ -1302,6 +1327,7 @@ public class Organisation {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
+    sb.append("    statusChangedAt: ").append(toIndentedString(statusChangedAt)).append("\n");
     sb.append("    organisationName: ").append(toIndentedString(organisationName)).append("\n");
     sb.append("    address1: ").append(toIndentedString(address1)).append("\n");
     sb.append("    address2: ").append(toIndentedString(address2)).append("\n");
@@ -1366,7 +1392,7 @@ public class Organisation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "created_at", "updated_at", "organisation_name", "address_1", "address_2", "town", "county", "country", "postcode", "lead_applicant_organisation_name", "lead_applicant_email", "organisation_unique_id", "applicant_names", "funders_and_sponsors", "sub_license_arrangements", "verified", "dsptk_ods_code", "dsptk_certified", "dsptk_expiry_date", "iso_27001_certified", "iso_27001_certification_num", "iso_expiry_date", "ce_certified", "ce_certification_num", "ce_expiry_date", "ce_plus_certified", "ce_plus_certification_num", "ce_plus_expiry_date", "ce_or_iso_certified", "ce_plus_or_iso_certified", "idvt_result", "idvt_result_perc", "idvt_errors", "idvt_completed_at", "companies_house_no", "sector_id", "ror_id", "website", "smb_status", "organisation_size", "unclaimed", "system_approved", "ods_id", "dsptk_status", "dsptk_date_last_published", "ico_registration_id", "ico_date_registered", "ico_expiry_date"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created_at", "updated_at", "status_changed_at", "organisation_name", "address_1", "address_2", "town", "county", "country", "postcode", "lead_applicant_organisation_name", "lead_applicant_email", "organisation_unique_id", "applicant_names", "funders_and_sponsors", "sub_license_arrangements", "verified", "dsptk_ods_code", "dsptk_certified", "dsptk_expiry_date", "iso_27001_certified", "iso_27001_certification_num", "iso_expiry_date", "ce_certified", "ce_certification_num", "ce_expiry_date", "ce_plus_certified", "ce_plus_certification_num", "ce_plus_expiry_date", "ce_or_iso_certified", "ce_plus_or_iso_certified", "idvt_result", "idvt_result_perc", "idvt_errors", "idvt_completed_at", "companies_house_no", "sector_id", "ror_id", "website", "smb_status", "organisation_size", "unclaimed", "system_approved", "ods_id", "dsptk_status", "dsptk_date_last_published", "ico_registration_id", "ico_date_registered", "ico_expiry_date"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -1398,6 +1424,9 @@ public class Organisation {
       }
       if ((jsonObj.get("updated_at") != null && !jsonObj.get("updated_at").isJsonNull()) && !jsonObj.get("updated_at").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `updated_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updated_at").toString()));
+      }
+      if ((jsonObj.get("status_changed_at") != null && !jsonObj.get("status_changed_at").isJsonNull()) && !jsonObj.get("status_changed_at").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status_changed_at` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status_changed_at").toString()));
       }
       if ((jsonObj.get("organisation_name") != null && !jsonObj.get("organisation_name").isJsonNull()) && !jsonObj.get("organisation_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `organisation_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organisation_name").toString()));

@@ -20,8 +20,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,7 +51,7 @@ import uk.ac.hdruk.safepeopleregistryapi.JSON;
 /**
  * Affiliation model
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-10-22T09:59:09.054128375Z[Etc/UTC]", comments = "Generator version: 7.24.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-11-03T12:18:39.378523076Z[Etc/UTC]", comments = "Generator version: 7.24.0")
 public class Affiliation {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -84,12 +86,84 @@ public class Affiliation {
   public static final String SERIALIZED_NAME_FROM = "from";
   @SerializedName(SERIALIZED_NAME_FROM)
   @javax.annotation.Nullable
-  private String from;
+  private LocalDate from;
 
   public static final String SERIALIZED_NAME_TO = "to";
   @SerializedName(SERIALIZED_NAME_TO)
   @javax.annotation.Nullable
-  private String to;
+  private LocalDate to;
+
+  public static final String SERIALIZED_NAME_END_DATE_RECORDED_AT = "end_date_recorded_at";
+  @SerializedName(SERIALIZED_NAME_END_DATE_RECORDED_AT)
+  @javax.annotation.Nullable
+  private OffsetDateTime endDateRecordedAt;
+
+  public static final String SERIALIZED_NAME_END_DATE_RECORDED_BY = "end_date_recorded_by";
+  @SerializedName(SERIALIZED_NAME_END_DATE_RECORDED_BY)
+  @javax.annotation.Nullable
+  private Integer endDateRecordedBy;
+
+  /**
+   * Who recorded the end date. The organisation&#39;s date wins over the user&#39;s
+   */
+  @JsonAdapter(EndDateSourceEnum.Adapter.class)
+  public enum EndDateSourceEnum {
+    USER("user"),
+    
+    ORGANISATION("organisation");
+
+    private String value;
+
+    EndDateSourceEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static EndDateSourceEnum fromValue(String value) {
+      for (EndDateSourceEnum b : EndDateSourceEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      return null;
+    }
+
+    public static class Adapter extends TypeAdapter<EndDateSourceEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final EndDateSourceEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public EndDateSourceEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return EndDateSourceEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      EndDateSourceEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_END_DATE_SOURCE = "end_date_source";
+  @SerializedName(SERIALIZED_NAME_END_DATE_SOURCE)
+  @javax.annotation.Nullable
+  private EndDateSourceEnum endDateSource;
+
+  public static final String SERIALIZED_NAME_LEFT_AT = "left_at";
+  @SerializedName(SERIALIZED_NAME_LEFT_AT)
+  @javax.annotation.Nullable
+  private OffsetDateTime leftAt;
 
   public static final String SERIALIZED_NAME_DEPARTMENT = "department";
   @SerializedName(SERIALIZED_NAME_DEPARTMENT)
@@ -258,7 +332,7 @@ public class Affiliation {
   }
 
 
-  public Affiliation from(@javax.annotation.Nullable String from) {
+  public Affiliation from(@javax.annotation.Nullable LocalDate from) {
     this.from = from;
     return this;
   }
@@ -268,31 +342,107 @@ public class Affiliation {
    * @return from
    */
   @javax.annotation.Nullable
-  public String getFrom() {
+  public LocalDate getFrom() {
     return from;
   }
 
-  public void setFrom(@javax.annotation.Nullable String from) {
+  public void setFrom(@javax.annotation.Nullable LocalDate from) {
     this.from = from;
   }
 
 
-  public Affiliation to(@javax.annotation.Nullable String to) {
+  public Affiliation to(@javax.annotation.Nullable LocalDate to) {
     this.to = to;
     return this;
   }
 
   /**
-   * Date affiliation concluded
+   * Date affiliation ends (or ended). Null when there is no known end date
    * @return to
    */
   @javax.annotation.Nullable
-  public String getTo() {
+  public LocalDate getTo() {
     return to;
   }
 
-  public void setTo(@javax.annotation.Nullable String to) {
+  public void setTo(@javax.annotation.Nullable LocalDate to) {
     this.to = to;
+  }
+
+
+  public Affiliation endDateRecordedAt(@javax.annotation.Nullable OffsetDateTime endDateRecordedAt) {
+    this.endDateRecordedAt = endDateRecordedAt;
+    return this;
+  }
+
+  /**
+   * When the end date was recorded
+   * @return endDateRecordedAt
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getEndDateRecordedAt() {
+    return endDateRecordedAt;
+  }
+
+  public void setEndDateRecordedAt(@javax.annotation.Nullable OffsetDateTime endDateRecordedAt) {
+    this.endDateRecordedAt = endDateRecordedAt;
+  }
+
+
+  public Affiliation endDateRecordedBy(@javax.annotation.Nullable Integer endDateRecordedBy) {
+    this.endDateRecordedBy = endDateRecordedBy;
+    return this;
+  }
+
+  /**
+   * The user who recorded the end date
+   * @return endDateRecordedBy
+   */
+  @javax.annotation.Nullable
+  public Integer getEndDateRecordedBy() {
+    return endDateRecordedBy;
+  }
+
+  public void setEndDateRecordedBy(@javax.annotation.Nullable Integer endDateRecordedBy) {
+    this.endDateRecordedBy = endDateRecordedBy;
+  }
+
+
+  public Affiliation endDateSource(@javax.annotation.Nullable EndDateSourceEnum endDateSource) {
+    this.endDateSource = endDateSource;
+    return this;
+  }
+
+  /**
+   * Who recorded the end date. The organisation&#39;s date wins over the user&#39;s
+   * @return endDateSource
+   */
+  @javax.annotation.Nullable
+  public EndDateSourceEnum getEndDateSource() {
+    return endDateSource;
+  }
+
+  public void setEndDateSource(@javax.annotation.Nullable EndDateSourceEnum endDateSource) {
+    this.endDateSource = endDateSource;
+  }
+
+
+  public Affiliation leftAt(@javax.annotation.Nullable OffsetDateTime leftAt) {
+    this.leftAt = leftAt;
+    return this;
+  }
+
+  /**
+   * When the leaver flow ran for this affiliation
+   * @return leftAt
+   */
+  @javax.annotation.Nullable
+  public OffsetDateTime getLeftAt() {
+    return leftAt;
+  }
+
+  public void setLeftAt(@javax.annotation.Nullable OffsetDateTime leftAt) {
+    this.leftAt = leftAt;
   }
 
 
@@ -504,6 +654,10 @@ public class Affiliation {
         Objects.equals(this.relationship, affiliation.relationship) &&
         Objects.equals(this.from, affiliation.from) &&
         Objects.equals(this.to, affiliation.to) &&
+        Objects.equals(this.endDateRecordedAt, affiliation.endDateRecordedAt) &&
+        Objects.equals(this.endDateRecordedBy, affiliation.endDateRecordedBy) &&
+        Objects.equals(this.endDateSource, affiliation.endDateSource) &&
+        Objects.equals(this.leftAt, affiliation.leftAt) &&
         Objects.equals(this.department, affiliation.department) &&
         Objects.equals(this.role, affiliation.role) &&
         Objects.equals(this.email, affiliation.email) &&
@@ -516,9 +670,20 @@ public class Affiliation {
         Objects.equals(this.isVerified, affiliation.isVerified);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
-    return Objects.hash(id, createdAt, updatedAt, organisationId, memberId, relationship, from, to, department, role, email, ror, registryId, currentEmployer, verificationCode, verificationSentAt, verificationConfirmedAt, isVerified);
+    return Objects.hash(id, createdAt, updatedAt, organisationId, memberId, relationship, from, to, endDateRecordedAt, endDateRecordedBy, endDateSource, leftAt, department, role, email, ror, registryId, currentEmployer, verificationCode, verificationSentAt, verificationConfirmedAt, isVerified);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -533,6 +698,10 @@ public class Affiliation {
     sb.append("    relationship: ").append(toIndentedString(relationship)).append("\n");
     sb.append("    from: ").append(toIndentedString(from)).append("\n");
     sb.append("    to: ").append(toIndentedString(to)).append("\n");
+    sb.append("    endDateRecordedAt: ").append(toIndentedString(endDateRecordedAt)).append("\n");
+    sb.append("    endDateRecordedBy: ").append(toIndentedString(endDateRecordedBy)).append("\n");
+    sb.append("    endDateSource: ").append(toIndentedString(endDateSource)).append("\n");
+    sb.append("    leftAt: ").append(toIndentedString(leftAt)).append("\n");
     sb.append("    department: ").append(toIndentedString(department)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
@@ -561,7 +730,7 @@ public class Affiliation {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>(Arrays.asList("id", "created_at", "updated_at", "organisation_id", "member_id", "relationship", "from", "to", "department", "role", "email", "ror", "registry_id", "current_employer", "verification_code", "verification_sent_at", "verification_confirmed_at", "is_verified"));
+    openapiFields = new HashSet<String>(Arrays.asList("id", "created_at", "updated_at", "organisation_id", "member_id", "relationship", "from", "to", "end_date_recorded_at", "end_date_recorded_by", "end_date_source", "left_at", "department", "role", "email", "ror", "registry_id", "current_employer", "verification_code", "verification_sent_at", "verification_confirmed_at", "is_verified"));
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>(0);
@@ -600,11 +769,12 @@ public class Affiliation {
       if ((jsonObj.get("relationship") != null && !jsonObj.get("relationship").isJsonNull()) && !jsonObj.get("relationship").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `relationship` to be a primitive type in the JSON string but got `%s`", jsonObj.get("relationship").toString()));
       }
-      if ((jsonObj.get("from") != null && !jsonObj.get("from").isJsonNull()) && !jsonObj.get("from").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `from` to be a primitive type in the JSON string but got `%s`", jsonObj.get("from").toString()));
+      if ((jsonObj.get("end_date_source") != null && !jsonObj.get("end_date_source").isJsonNull()) && !jsonObj.get("end_date_source").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `end_date_source` to be a primitive type in the JSON string but got `%s`", jsonObj.get("end_date_source").toString()));
       }
-      if ((jsonObj.get("to") != null && !jsonObj.get("to").isJsonNull()) && !jsonObj.get("to").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `to` to be a primitive type in the JSON string but got `%s`", jsonObj.get("to").toString()));
+      // validate the optional field `end_date_source`
+      if (jsonObj.get("end_date_source") != null && !jsonObj.get("end_date_source").isJsonNull()) {
+        EndDateSourceEnum.validateJsonElement(jsonObj.get("end_date_source"));
       }
       if ((jsonObj.get("department") != null && !jsonObj.get("department").isJsonNull()) && !jsonObj.get("department").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `department` to be a primitive type in the JSON string but got `%s`", jsonObj.get("department").toString()));

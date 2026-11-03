@@ -62,6 +62,14 @@ public class OrganisationTest {
     }
 
     /**
+     * Test the property 'statusChangedAt'
+     */
+    @Test
+    public void statusChangedAtTest() {
+        // TODO: test statusChangedAt
+    }
+
+    /**
      * Test the property 'organisationName'
      */
     @Test

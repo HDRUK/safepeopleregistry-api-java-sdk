@@ -611,10 +611,36 @@ components:
         from:
           description: Date affiliation commenced
           example: 2023-01-12
+          format: date
           type: string
         to:
-          description: Date affiliation concluded
+          description: Date affiliation ends (or ended). Null when there is no known
+            end date
           example: 2024-12-01
+          format: date
+          nullable: true
+          type: string
+        end_date_recorded_at:
+          description: When the end date was recorded
+          format: date-time
+          nullable: true
+          type: string
+        end_date_recorded_by:
+          description: The user who recorded the end date
+          nullable: true
+          type: integer
+        end_date_source:
+          description: Who recorded the end date. The organisation's date wins over
+            the user's
+          enum:
+          - user
+          - organisation
+          nullable: true
+          type: string
+        left_at:
+          description: When the leaver flow ran for this affiliation
+          format: date-time
+          nullable: true
           type: string
         department:
           description: Department worked during affiliation
@@ -1511,6 +1537,11 @@ components:
           type: string
         updated_at:
           example: 2023-10-10T16:03:00Z
+          type: string
+        status_changed_at:
+          description: When the organisation's status last changed. Only returned
+            by the organisations index.
+          example: 2023-10-11T09:00:00Z
           type: string
         organisation_name:
           example: An Organisation Ltd
